@@ -20,6 +20,21 @@ const animations = {
         }
     },
 
+    closeMenuOnClickOutside: (event) => {
+        const menuButton = document.querySelector("#hamburger__menu");
+        const menuLines = document.querySelectorAll(".hamburger__menu__line");
+        const navegationContainer = document.querySelector(".navigation__links");
+        const body = document.querySelector("body");
+
+        if (!navegationContainer.contains(event.target) && !menuButton.contains(event.target) && navegationContainer.classList.contains("menu__open")) {
+            menuLines[0].classList.remove("rotate__line__one");
+            menuLines[1].classList.remove("display__none");
+            menuLines[2].classList.remove("rotate__line__three");
+            navegationContainer.classList.remove("menu__open");
+            body.classList.remove("no__scroll");
+        }
+    },
+
     toggleMenu: () => {
         const menuButton = document.querySelector("#hamburger__menu");
         const menuLines = document.querySelectorAll(".hamburger__menu__line");
@@ -33,6 +48,8 @@ const animations = {
             navegationContainer.classList.toggle("menu__open");
             body.classList.toggle("no__scroll");
         });
+
+        document.addEventListener("click", animations.closeMenuOnClickOutside);
     },
 
     init: () => {
