@@ -24,12 +24,14 @@ const animations = {
         const menuButton = document.querySelector("#hamburger__menu");
         const menuLines = document.querySelectorAll(".hamburger__menu__line");
         const navegationContainer = document.querySelector(".navigation__links");
+        const body = document.querySelector("body");
 
         menuButton.addEventListener("click", () => {
             menuLines[0].classList.toggle("rotate__line__one");
             menuLines[1].classList.toggle("display__none");
             menuLines[2].classList.toggle("rotate__line__three");
             navegationContainer.classList.toggle("menu__open");
+            body.classList.toggle("no__scroll");
         });
     },
 
