@@ -82,6 +82,7 @@
             .container__presentation{
                 flex-wrap: wrap;
                 max-width: 700px;
+                margin-top: 60px;
 
                 .container__presentation__text,
                 .container__presentation__image{
@@ -89,8 +90,10 @@
                 }
 
                 .container__presentation__image{
+
                     img{
                         max-width: 700px;
+                        margin-left: -20px;
                     }
                 }
             }

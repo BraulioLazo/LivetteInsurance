@@ -80,12 +80,18 @@ strong {
 
 @media screen and (max-width: 1024px){
    body{
-    min-height: 1220px;
+    min-height: 1180px;
    }
+
+   
 }
 
 @media screen and (max-width: 768px){
     body{
-        min-height: 1130px;
+        min-height: 1000px;
     }
+
+    h1{
+        font-size: 40px !important;
+       }
 }
