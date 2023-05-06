@@ -78,20 +78,27 @@
 @media screen and (max-width: 1024px) {
 
     .section__presentation {
-        .section__presentation__container{
-            .container__presentation{
+        .section__presentation__container {
+            .container__presentation {
                 flex-wrap: wrap;
                 max-width: 700px;
                 margin-top: 60px;
 
                 .container__presentation__text,
-                .container__presentation__image{
+                .container__presentation__image {
                     width: 100%;
                 }
 
-                .container__presentation__image{
+                .container__presentation__text {
+                    h1 {
+                        font-size: 40px;
+                        line-height: 45px;
+                    }
+                }
 
-                    img{
+                .container__presentation__image {
+
+                    img {
                         max-width: 700px;
                         margin-left: -20px;
                     }
@@ -101,19 +108,19 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .section__presentation {
-        .section__presentation__container{
-            .container__presentation{
+        .section__presentation__container {
+            .container__presentation {
                 max-width: 540px;
 
                 .container__presentation__text,
-                .container__presentation__image{
+                .container__presentation__image {
                     width: 100%;
                 }
 
-                .container__presentation__image{
-                    img{
+                .container__presentation__image {
+                    img {
                         max-width: 700px;
                     }
                 }
