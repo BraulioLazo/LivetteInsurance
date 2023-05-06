@@ -1,6 +1,5 @@
 const animations = {
     menuAnimations: () => {
-
         const header = document.querySelector("#header");
         const logoContainer = document.querySelector('.logo__container');
         const elementsToDisableHover = document.querySelectorAll(".element-to-disable-hover");
@@ -21,6 +20,19 @@ const animations = {
         }
     },
 
+    toggleMenu: () => {
+        const menuButton = document.querySelector("#hamburger__menu");
+        const menuLines = document.querySelectorAll(".hamburger__menu__line");
+        const navegationContainer = document.querySelector(".navigation__links");
+
+        menuButton.addEventListener("click", () => {
+            menuLines[0].classList.toggle("rotate__line__one");
+            menuLines[1].classList.toggle("display__none");
+            menuLines[2].classList.toggle("rotate__line__three");
+            navegationContainer.classList.toggle("menu__open");
+        });
+    },
+
     init: () => {
         if (window.innerWidth > 1024) {
             window.onscroll = animations.menuAnimations;
@@ -33,6 +45,8 @@ const animations = {
                 window.onscroll = null;
             }
         });
+
+        animations.toggleMenu();
     }
 };
 
