@@ -67,6 +67,26 @@ header.blue__background {
     background-color: var(--main-color-light);
 }
 
-header#header nav ul li.change__hover__efect:hover {
-    color: var(--letter-color-light);
+#header li.change__hover__efect:hover {
+    color: var(--letter-color-light) !important;
+}
+
+@media screen and (max-width: 1024px) {
+    #header {
+        background-color: var(--main-color-light);
+
+        .container__header {
+            .logo__container {
+                color: var(--letter-color-light) !important;
+            }
+
+            nav {
+                ul {
+                    li:hover {
+                        color: var(--letter-color-light);
+                    }
+                }
+            }
+        }
+    }
 }

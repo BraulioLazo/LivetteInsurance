@@ -19,7 +19,15 @@
 
 
 body {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
     background-color: var(--main-color-dark);
+}
+
+main{
+    width: 100%;
+    height: 100%;
 }
 
 h1,
@@ -68,4 +76,16 @@ strong {
     transform-style: preserve-3d;
     transform-origin: center center;
     transition: transform 0.3s, transform-origin 0.3s;
+}
+
+@media screen and (max-width: 1024px){
+   body{
+    min-height: 1220px;
+   }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        min-height: 1130px;
+    }
 }

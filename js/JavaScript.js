@@ -1,10 +1,10 @@
+const animations = {
+    menuAnimations: () => {
 
-function startProgram() {
-    const header = document.querySelector("#header");
-    const logoContainer = document.querySelector('.logo__container');
-    const elementsToDisableHover = document.querySelectorAll(".element-to-disable-hover");
+        const header = document.querySelector("#header");
+        const logoContainer = document.querySelector('.logo__container');
+        const elementsToDisableHover = document.querySelectorAll(".element-to-disable-hover");
 
-    window.onscroll = () => {
         if (scrollY > 0) {
             header.classList.add("blue__background");
             logoContainer.style.color = "var(--letter-color-light)";
@@ -19,7 +19,21 @@ function startProgram() {
                 element.classList.remove("change__hover__efect");
             });
         }
-    };
+    },
 
-}
-window.addEventListener("load", startProgram);
+    init: () => {
+        if (window.innerWidth > 1024) {
+            window.onscroll = animations.menuAnimations;
+        }
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 1024) {
+                window.onscroll = animations.menuAnimations;
+            } else {
+                window.onscroll = null;
+            }
+        });
+    }
+};
+
+animations.init();

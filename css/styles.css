@@ -17,7 +17,15 @@
 }
 
 body {
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
   background-color: var(--main-color-dark);
+}
+
+main {
+  width: 100%;
+  height: 100%;
 }
 
 h1,
@@ -67,6 +75,16 @@ strong {
   transition: transform 0.3s, transform-origin 0.3s;
 }
 
+@media screen and (max-width: 1024px) {
+  body {
+    min-height: 1220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    min-height: 1130px;
+  }
+}
 #header {
   display: flex;
   align-items: center;
@@ -127,17 +145,28 @@ header.blue__background {
   background-color: var(--main-color-light);
 }
 
-header#header nav ul li.change__hover__efect:hover {
-  color: var(--letter-color-light);
+#header li.change__hover__efect:hover {
+  color: var(--letter-color-light) !important;
 }
 
+@media screen and (max-width: 1024px) {
+  #header {
+    background-color: var(--main-color-light);
+  }
+  #header .container__header .logo__container {
+    color: var(--letter-color-light) !important;
+  }
+  #header .container__header nav ul li:hover {
+    color: var(--letter-color-light);
+  }
+}
 .section__presentation {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 20px;
   background-image: url("../assets/images/hero-bg-1.jpg");
   background-size: cover;
@@ -192,6 +221,32 @@ header#header nav ul li.change__hover__efect:hover {
 }
 .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
   width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .section__presentation .section__presentation__container .container__presentation {
+    flex-wrap: wrap;
+    max-width: 700px;
+  }
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__text,
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__image {
+    width: 100%;
+  }
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section__presentation .section__presentation__container .container__presentation {
+    max-width: 540px;
+  }
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__text,
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__image {
+    width: 100%;
+  }
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
+    max-width: 700px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
