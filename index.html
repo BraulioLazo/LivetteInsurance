@@ -12,29 +12,37 @@
 <body>
     <header id="header">
         <div class="container__header">
+
             <div class="logo__container">
                 Livette Insurance
             </div>
+
             <nav>
                 <ul class="navigation__links">
-                    <li class="element-to-disable-hover">Home</li>
-                    <li class="element-to-disable-hover">Contacto</li>
+
+                    <li class="element-to-disable-hover">
+                        <a class="menu__links" data-section="section__presentation">Home</a>
+                    </li>
+
+                    <li class="element-to-disable-hover">
+                        <a class="menu__links" data-section="section__contact">Contacto</a>
+                    </li>
+
                 </ul>
 
                 <button id="hamburger__menu" class="hamburger__menu" type="button">
                     <span class="hamburger__menu__line"></span>
                     <span class="hamburger__menu__line"></span>
                     <span class="hamburger__menu__line"></span>
-                  </button>
+                </button>
+
             </nav>
 
-            
-              
         </div>
     </header>
 
     <main>
-        <section id="section__presentation" class="section__presentation">
+        <section id="section__presentation" class="section__presentation" data-section-id="section__presentation">
             <div class="section__presentation__gradient"></div>
             <div class="section__presentation__container section__container">
 
@@ -56,6 +64,41 @@
                     <div class="container__presentation__image image__container">
                         <img class="img__to__animate" src="assets/images/illustration-1.webp" alt="">
                     </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="section__contact" class="section__contact" data-section-id="section__contact">
+            <div class="section__contact__container section__container">
+
+                <h2>¿Tienes alguna pregunta? <br> ¡Déjanos saber!</h2>
+
+                <div class="contact__form__container">
+
+                    <form id="contact__form">
+
+                        <div class="input__group">
+                            <label for="username">Nombre<span>*</span></label><br>
+                            <input type="text" id="username" name="username" required><br>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="useremail">Email<span>*</span></label><br>
+                            <input type="email" id="useremail" name="useremail" required><br>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="usertextarea">Mensaje<span>*</span></label><br>
+                            <textarea name="usertextarea" id="usertextarea" required></textarea>
+                        </div>
+
+                        <div class="input__group">
+                            <button class="btn" id="contact__form__btn__submit" type="submit">Eviar el Mensaje</button>
+                        </div>
+
+                    </form>
+
                 </div>
 
             </div>

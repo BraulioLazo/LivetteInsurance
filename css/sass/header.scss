@@ -39,6 +39,26 @@
                     font-weight: 600px;
                     transition: var(--transition-short);
                     cursor: pointer;
+
+                    a.menu__links {
+                        color: var(--letter-color-light) !important;
+                        text-decoration: none;
+                        transition: var(--transition-short);
+                    }
+
+                    a.menu__links:hover {
+                        color: var(--main-color-light) !important;
+                    }
+                }
+
+                li.active::before {
+                    opacity: 1 ;
+                    color: var(--letter-color-light);
+                    transition: var(--transition-short);
+                }
+
+                li.active:hover::before {
+                    color: var(--main-color-light);
                 }
 
                 li:hover {
@@ -77,6 +97,14 @@ header.blue__background {
 
 #header li.change__hover__efect:hover {
     color: var(--letter-color-light) !important;
+
+}
+
+header#header .container__header nav ul li.change__hover__efect {
+    a.menu__links:hover {
+        color: var(--letter-color-light) !important;
+
+    }
 }
 
 
@@ -107,6 +135,7 @@ header.blue__background {
 
                     li {
                         width: 100%;
+
                     }
 
                     li:hover {
@@ -153,7 +182,7 @@ header.blue__background {
         .container__header {
             nav {
                 ul.menu__open {
-                    
+
                     transform: translateX(0) !important;
                 }
             }
