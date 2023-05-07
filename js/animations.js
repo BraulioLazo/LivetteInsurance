@@ -113,6 +113,8 @@ const animations = {
             animations.closeMenuOnClickOutside(event, topLine, middleLine, bottomLine);
         });
 
+        animations.highlightActiveLink();
+        
         window.addEventListener("scroll", () => {
             animations.highlightActiveLink();
         });

@@ -108,6 +108,7 @@ strong {
   }
   body h2 {
     font-size: 40px;
+    line-height: 45px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -116,9 +117,11 @@ strong {
   }
   body h1 {
     font-size: 40px;
+    line-height: 45px;
   }
   body h2 {
-    font-size: 35px;
+    font-size: 30px;
+    line-height: 35px;
   }
 }
 #header {
@@ -135,7 +138,6 @@ strong {
   overflow: hidden;
   z-index: 999;
 }
-
 #header .container__header {
   display: flex;
   align-items: center;
@@ -143,20 +145,17 @@ strong {
   width: var(--main-container-width);
   margin: 0 auto;
 }
-
 #header .container__header .logo__container {
   font-size: 30px;
   font-weight: 800;
   font-style: italic;
   color: var(--main-color-light);
 }
-
 #header .container__header nav ul.navigation__links {
   display: flex;
   gap: 20px;
   list-style: none;
 }
-
 #header .container__header nav ul.navigation__links li {
   position: relative;
   padding-left: 20px;
@@ -165,31 +164,25 @@ strong {
   transition: var(--transition-short);
   cursor: pointer;
 }
-
 #header .container__header nav ul.navigation__links li a.menu__links {
   color: var(--letter-color-light) !important;
   text-decoration: none;
   transition: var(--transition-short);
 }
-
 #header .container__header nav ul.navigation__links li a.menu__links:hover {
   color: var(--main-color-light) !important;
 }
-
 #header .container__header nav ul.navigation__links li.active::before {
   opacity: 1;
   color: var(--letter-color-light);
   transition: var(--transition-short);
 }
-
 #header .container__header nav ul.navigation__links li.active:hover::before {
   color: var(--main-color-light);
 }
-
 #header .container__header nav ul.navigation__links li:hover {
   color: var(--main-color-light);
 }
-
 #header .container__header nav ul.navigation__links li::before {
   content: "•";
   position: absolute;
@@ -200,11 +193,9 @@ strong {
   line-height: 25px;
   transition: opacity 0.3s;
 }
-
 #header .container__header nav ul.navigation__links li:hover::before {
   opacity: 1;
 }
-
 #header .container__header nav #hamburger__menu {
   display: none;
   background-color: transparent;
@@ -291,9 +282,8 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   padding: 20px;
   background-image: url("../assets/images/hero-bg-1.jpg");
   background-size: cover;
-  background-position: right;
+  background-position: 85% 0%;
 }
-
 .section__presentation__gradient {
   position: absolute;
   top: 0px;
@@ -303,22 +293,18 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   background-color: var(--main-color-dark);
   opacity: 0.5;
 }
-
 .section__presentation .section__presentation__container {
   z-index: 1;
 }
-
 .section__presentation .section__presentation__container .container__presentation {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text {
   width: 50%;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text h3 {
   display: flex;
   align-items: center;
@@ -326,29 +312,23 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   margin-bottom: -15px;
   color: var(--main-color-light);
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text h3 span {
   font-size: 30px;
   padding: 0 5px;
   padding-top: 7px;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text h3 span:first-child {
   padding-left: 0px;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text h1 {
   padding: 20px 0;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text #btn__contact__us {
   margin-top: 20px;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__image {
   width: 50%;
 }
-
 .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
   width: 100%;
 }
@@ -388,37 +368,30 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   min-height: 800px;
   padding: 100px 20px;
 }
-
 .section__contact .section__contact__container h2 {
   width: 100%;
   margin-bottom: 40px;
   text-align: center;
 }
-
 .section__contact .section__contact__container .contact__form__container {
   width: 100%;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   width: 100%;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form label {
   color: var(--letter-color-light);
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form label span {
   padding-left: 5px;
   color: red;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group {
   width: 100%;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group input[type=text],
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group input[type=email],
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group textarea {
@@ -431,40 +404,33 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   background-color: transparent;
   transition: var(--transition-short);
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group input[type=text]:focus,
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group input[type=email]:focus,
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group textarea:focus {
   border: 1px solid var(--main-color-light);
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group input[type=text],
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group input[type=email] {
   width: 100%;
   height: 40px;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group textarea {
   width: 100%;
   min-height: 200px;
   padding: 10px 20px;
   resize: vertical;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group:first-child,
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group:nth-child(2) {
   width: calc(50% - 20px);
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form .input__group:nth-child(3) {
   margin-top: -20px;
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form #contact__form__btn__submit {
   background-color: var(--main-color-light);
   color: var(--letter-color-light);
 }
-
 .section__contact .section__contact__container .contact__form__container form#contact__form #contact__form__btn__submit:hover {
   background-color: transparent;
   color: var(--main-color-light);
@@ -479,6 +445,5 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
     margin-top: -20px;
   }
 }
-
 
 /*# sourceMappingURL=styles.css.map */
