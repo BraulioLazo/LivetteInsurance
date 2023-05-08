@@ -271,7 +271,10 @@ li.active:hover::before {
   #header .container__header nav ul li {
     width: 100%;
   }
-  #header .container__header nav ul li:hover {
+  #header .container__header nav ul li.change__hover__efect :hover span {
+    color: var(--letter-color-light) !important;
+  }
+  #header .container__header nav ul li.change__hover__efect :hover a.menu__links:hover {
     color: var(--letter-color-light) !important;
   }
   #header .container__header nav button#hamburger__menu {

@@ -106,8 +106,6 @@ header#header .container__header nav ul li.change__hover__efect {
         color: var(--letter-color-light) !important;
 
     }
-
-   
 }
 
 li.active:hover::before {
@@ -145,8 +143,13 @@ li.active:hover::before {
 
                     }
 
-                    li:hover {
-                        color: var(--letter-color-light) !important;
+                    li.change__hover__efect :hover{
+                        span{
+                            color: var(--letter-color-light) !important;
+                        }
+                        a.menu__links:hover {
+                            color: var(--letter-color-light) !important;
+                        }
                     }
                 }
 
