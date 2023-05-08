@@ -104,6 +104,13 @@ const animations = {
             imagePosition = image.getBoundingClientRect();
         });
 
+        document.addEventListener("visibilitychange", () => {
+            if (!document.hidden) {
+                aspectRatio = window.innerWidth / window.innerHeight;
+                imagePosition = image.getBoundingClientRect();
+            }
+        });
+
         container.addEventListener("mousemove", (event) => {
 
             const positionX = Math.floor(event.clientX - imagePosition.left);
