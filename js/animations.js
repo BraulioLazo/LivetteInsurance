@@ -111,6 +111,13 @@ const animations = {
             }
         });
 
+        document.addEventListener("scroll", () => {
+
+            aspectRatio = window.innerWidth / window.innerHeight;
+            imagePosition = image.getBoundingClientRect();
+
+        });
+
         container.addEventListener("mousemove", (event) => {
 
             const positionX = Math.floor(event.clientX - imagePosition.left);

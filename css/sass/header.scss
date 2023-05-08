@@ -59,6 +59,7 @@
 
                 li.active:hover::before {
                     color: var(--main-color-light);
+                    opacity: 1;
                 }
 
                 li:hover {
@@ -105,6 +106,12 @@ header#header .container__header nav ul li.change__hover__efect {
         color: var(--letter-color-light) !important;
 
     }
+
+   
+}
+
+li.active:hover::before {
+    color: var(--letter-color-light) !important;
 }
 
 

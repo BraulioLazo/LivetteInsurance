@@ -205,6 +205,7 @@ strong {
 }
 #header .container__header nav ul.navigation__links li.active:hover::before {
   color: var(--main-color-light);
+  opacity: 1;
 }
 #header .container__header nav ul.navigation__links li:hover {
   color: var(--main-color-light);
@@ -238,6 +239,10 @@ header.blue__background {
 }
 
 header#header .container__header nav ul li.change__hover__efect a.menu__links:hover {
+  color: var(--letter-color-light) !important;
+}
+
+li.active:hover::before {
   color: var(--letter-color-light) !important;
 }
 
@@ -331,19 +336,19 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text {
   width: 50%;
 }
-.section__presentation .section__presentation__container .container__presentation .container__presentation__text h3 {
+.section__presentation .section__presentation__container .container__presentation .container__presentation__text h4 {
   display: flex;
   align-items: center;
   align-content: center;
   margin-bottom: -15px;
   color: var(--main-color-light);
 }
-.section__presentation .section__presentation__container .container__presentation .container__presentation__text h3 span {
+.section__presentation .section__presentation__container .container__presentation .container__presentation__text h4 span {
   font-size: 30px;
   padding: 0 5px;
   padding-top: 7px;
 }
-.section__presentation .section__presentation__container .container__presentation .container__presentation__text h3 span:first-child {
+.section__presentation .section__presentation__container .container__presentation .container__presentation__text h4 span:first-child {
   padding-left: 0px;
 }
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text h1 {
