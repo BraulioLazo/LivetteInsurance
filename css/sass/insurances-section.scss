@@ -1,0 +1,86 @@
+.section__insurances {
+    padding: 100px 20px;
+
+    &__container {
+
+        .insurances__container__description {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .insurances__container__description__text {
+                max-width: 600px;
+
+                h4 {
+                    color: var(--main-color-light);
+                }
+            }
+        }
+
+        .insurances__container__insurance {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            padding-top: 30px;
+
+            .insurance__type__container {
+                max-width: calc(33.333% - 14px);
+                min-width: 250px;
+                padding: 20px;
+                border-radius: var(--border-radius-main);
+                border: 1px solid var(--main-color-light);
+
+                .insurance__tupe__img__container{
+                    max-width: 60px;
+
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                h3 {
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .section__insurances {
+
+        &__container {
+
+            .insurances__container__description {
+
+                .insurances__container__description__text {
+                    h2 {
+                        padding: 10px 0;
+                    }
+                }
+            }
+
+            .insurances__container__insurance {
+                .insurance__type__container {
+                    max-width: calc(50% - 10px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section__insurances {
+
+        &__container {
+
+            .insurances__container__insurance {
+                .insurance__type__container {
+                    max-width: calc(100% - 0px);
+                }
+            }
+        }
+    }
+}

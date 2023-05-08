@@ -15,6 +15,7 @@
   --main-container-width: 1400px;
   --transition-short: 0.3s ease;
   --transition-medium: 0.6s ease;
+  --border-radius-main: 12px;
 }
 
 body {
@@ -44,11 +45,21 @@ h6 {
 
 h1 {
   font-size: 60px;
-  line-height: 60px;
+  line-height: 65px;
 }
 
 h2 {
   font-size: 50px;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 22px;
 }
 
 p {
@@ -94,13 +105,20 @@ strong {
 
 .image__container {
   transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.img__to__animate {
   transform-origin: center center;
-  transition: transform 0.3s, transform-origin 0.3s;
+  transition: 0.2s ease;
 }
 
 @media screen and (max-width: 1024px) {
   body {
     min-height: 1080px;
+  }
+  body .section__container {
+    max-width: 700px;
   }
   body h1 {
     font-size: 50px;
@@ -109,6 +127,10 @@ strong {
   body h2 {
     font-size: 40px;
     line-height: 45px;
+  }
+  body h4 {
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -122,6 +144,10 @@ strong {
   body h2 {
     font-size: 30px;
     line-height: 35px;
+  }
+  body h4 {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 #header {
@@ -280,7 +306,7 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   width: 100%;
   height: 100%;
   padding: 20px;
-  background-image: url("../assets/images/hero-bg-1.jpg");
+  background-image: url("../assets/images/hero/hero-bg-1.jpg");
   background-size: cover;
   background-position: 85% 0%;
 }
@@ -345,7 +371,6 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   }
   .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
     max-width: 700px;
-    margin-left: -20px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -443,6 +468,58 @@ header#header .container__header nav ul li.change__hover__efect a.menu__links:ho
   }
   .section__contact .section__contact__container .contact__form__container form#contact__form .input__group:nth-child(2) {
     margin-top: -20px;
+  }
+}
+.section__insurances {
+  padding: 100px 20px;
+}
+.section__insurances__container .insurances__container__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.section__insurances__container .insurances__container__description .insurances__container__description__text {
+  max-width: 600px;
+}
+.section__insurances__container .insurances__container__description .insurances__container__description__text h4 {
+  color: var(--main-color-light);
+}
+.section__insurances__container .insurances__container__insurance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding-top: 30px;
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container {
+  max-width: calc(33.333% - 14px);
+  min-width: 250px;
+  padding: 20px;
+  border-radius: var(--border-radius-main);
+  border: 1px solid var(--main-color-light);
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container .insurance__tupe__img__container {
+  max-width: 60px;
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container .insurance__tupe__img__container img {
+  width: 100%;
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container h3 {
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .section__insurances__container .insurances__container__description .insurances__container__description__text h2 {
+    padding: 10px 0;
+  }
+  .section__insurances__container .insurances__container__insurance .insurance__type__container {
+    max-width: calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .section__insurances__container .insurances__container__insurance .insurance__type__container {
+    max-width: calc(100% - 0px);
   }
 }
 

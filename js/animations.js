@@ -26,14 +26,14 @@ const animations = {
     highlightActiveLink: () => {
         const sections = document.querySelectorAll("[data-section-id]");
         const menuLinks = document.querySelectorAll(".menu__links");
-        const menuLinkContainer = document.querySelectorAll(".element-to-disable-hover")
+        const menuLinkContainer = document.querySelectorAll(".element-to-disable-hover");
 
         let currentActive = "";
 
         sections.forEach((section) => {
             const sectionTop = section.getBoundingClientRect().top;
 
-            if (sectionTop <= 200) {
+            if (sectionTop <= 400) {
                 currentActive = section.id;
             }
         });
@@ -94,6 +94,39 @@ const animations = {
         });
     },
 
+    imgAnimation: (container, image) => {
+        let imagePosition = image.getBoundingClientRect();
+
+        let aspectRatio = window.innerWidth / window.innerHeight;
+
+        window.addEventListener("resize", () => {
+            aspectRatio = window.innerWidth / window.innerHeight;
+            imagePosition = image.getBoundingClientRect();
+        });
+
+        container.addEventListener("mousemove", (event) => {
+
+            const positionX = Math.floor(event.clientX - imagePosition.left);
+            const positionY = Math.floor(event.clientY - imagePosition.top);
+
+            const centerX = imagePosition.width / 2;
+            const centerY = imagePosition.height / 2;
+
+            const normalizedX = -(positionX - centerX) / centerX * aspectRatio;
+            const normalizedY = (positionY - centerY) / centerY;
+
+            const maxRotation = 15;
+            const rotateY = normalizedY * maxRotation;
+            const rotateX = normalizedX * maxRotation;
+
+            image.style.transform = `rotateX(${rotateY}deg) rotateY(${rotateX}deg)`;
+        });
+
+        container.addEventListener("mouseleave", () => {
+            image.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        });
+    },
+
     init: () => {
         animations.navegationContainer = document.querySelector(".navigation__links");
         animations.menuButton = document.querySelector("#hamburger__menu");
@@ -114,7 +147,7 @@ const animations = {
         });
 
         animations.highlightActiveLink();
-        
+
         window.addEventListener("scroll", () => {
             animations.highlightActiveLink();
         });
@@ -136,6 +169,12 @@ const animations = {
         });
 
         animations.setupSmoothScrollLinks();
+
+        const containerElement = document.querySelectorAll(".image__container");
+        containerElement.forEach(containerElement => {
+            const imageElement = containerElement.querySelector(".img__to__animate");
+            animations.imgAnimation(containerElement, imageElement);
+        });
     }
 };
 
