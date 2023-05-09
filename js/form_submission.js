@@ -1,28 +1,34 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact__form');
-    
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
 
-        // Replace YOUR_FORMSPREE_ENDPOINT with your Formspree endpoint
-        const formspreeEndpoint = 'https://formspree.io/f/xjvdlner';
+const form = document.getElementById('contact__form');
 
-        fetch(formspreeEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: new URLSearchParams(new FormData(form))
-        })
-        .then(response => response.json())
-        .then(() => {
-            // Handle successful form submission here
-            const formSendStatusContainer = document.querySelector("#form_send_status");
-            formSendStatusContainer.textContent = "Su mensaje se ha enviado con éxito. Lo contactaremoslo más pronto posible. !Un abrazo¡"
-        })
-        .catch(() => {
-            // Handle form submission errors here
-            alert('An error occurred while submitting the form.');
-        });
+async function handleSubmit(event) {
+    event.preventDefault();
+    const status = document.getElementById("form_send_status");
+    const data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            status.classList.add("message__status__styles");
+            status.innerHTML = "Hemos recibido tu mensaje. Te contactaremos lo más pronto posible!";
+            form.reset();
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    status.classList.add("message__status__styles");
+                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                    status.innerHTML = "Oops! Hemos tenido un problema al enviar el mensaje. Recargue la página y vuelva a enviarlo";
+                }
+            });
+        }
+    }).catch(error => {
+        status.classList.add("message__status__styles");
+        status.innerHTML = "Oops! Hemos tenido un problema al enviar el mensaje. Recargue la página y vuelva a enviarlo";
     });
-});
+}
+form.addEventListener("submit", handleSubmit);

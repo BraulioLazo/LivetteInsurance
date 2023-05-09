@@ -141,6 +141,16 @@ const animations = {
         });
     },
 
+    smoothScroll: (target) => {
+        const targetId = target.getAttribute("data-section");
+        const targetElement = document.querySelector(`[data-section-id="${targetId}"]`);
+
+        targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    },
+
     init: () => {
         animations.navegationContainer = document.querySelector(".navigation__links");
         animations.menuButton = document.querySelector("#hamburger__menu");

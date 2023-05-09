@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title> Livette Insurance </title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -66,7 +65,7 @@
                             Protegiendo lo que realmente importa: tu vida, tu familia y tus bienes preciados
                         </p>
 
-                        <button id="btn__contact__us" class="btn"> Contáctanos </button>
+                        <button id="btn__contact__us" class="btn" data-section="section__contact"> Contáctanos </button>
                     </div>
                     <div class="container__presentation__image image__container">
                         <img class="img__to__animate" src="assets/images/hero/hero-img.png" alt="">
@@ -149,26 +148,26 @@
 
                         <div class="input__group">
                             <label for="username">Nombre<span>*</span></label><br>
-                            <input type="text" id="username" name="username" required><br>
+                            <input type="text" id="username" name="Name" required><br>
                         </div>
 
                         <div class="input__group">
                             <label for="useremail">Email<span>*</span></label><br>
-                            <input type="email" id="useremail" name="useremail" required><br>
+                            <input type="email" id="useremail" name="Email" required><br>
                         </div>
 
                         <div class="input__group">
                             <label for="usertextarea">Mensaje<span>*</span></label><br>
-                            <textarea name="usertextarea" id="usertextarea" required></textarea>
+                            <textarea name="Message" id="usertextarea" required></textarea>
                         </div>
 
+
                         <div class="input__group">
+                            <p id="form_send_status"></p>
                             <button class="btn" id="contact__form__btn__submit" type="submit">Eviar el Mensaje</button>
                         </div>
 
                     </form>
-
-                    <p id="form_send_status"></p>
 
                 </div>
 
@@ -176,6 +175,7 @@
         </section>
     </main>
     <script src="js/animations.js"></script>
+    <script src="js/JavaScript.js"></script>
     <script src="js/form_submission.js"></script>
 </body>
 
