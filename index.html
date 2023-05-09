@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title> Livette Insurance </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -144,7 +145,7 @@
 
                 <div class="contact__form__container">
 
-                    <form id="contact__form">
+                    <form id="contact__form" action="https://formspree.io/f/xjvdlner" method="post">
 
                         <div class="input__group">
                             <label for="username">Nombre<span>*</span></label><br>
@@ -167,12 +168,15 @@
 
                     </form>
 
+                    <p id="form_send_status"></p>
+
                 </div>
 
             </div>
         </section>
     </main>
     <script src="js/animations.js"></script>
+    <script src="js/form_submission.js"></script>
 </body>
 
 </html>
