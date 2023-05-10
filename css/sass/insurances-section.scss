@@ -26,16 +26,18 @@
             padding-top: 30px;
 
             .insurance__type__container {
+                position: relative;
                 max-width: calc(33.333% - 14px);
                 min-width: 250px;
                 padding: 20px;
                 border-radius: var(--border-radius-main);
                 border: 1px solid var(--main-color-light);
+                overflow: hidden;
 
-                .insurance__tupe__img__container{
+                .insurance__tupe__img__container {
                     max-width: 60px;
 
-                    img{
+                    img {
                         width: 100%;
                     }
                 }
@@ -43,6 +45,28 @@
                 h3 {
                     padding: 20px 0;
                 }
+
+                p,
+                h3,
+                img {
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .insurance__type__hover__element {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    width: 0;
+                    transition: var(--transition-medium);
+                    background-color: var(--main-color-light);
+                    z-index: 1;
+                }
+            }
+
+            .insurance__type__container:hover .insurance__tupe__img__container img{
+                filter: brightness(0) invert(1);
             }
         }
     }

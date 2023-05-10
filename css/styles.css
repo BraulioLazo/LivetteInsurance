@@ -514,11 +514,13 @@ li.active:hover::before {
   padding-top: 30px;
 }
 .section__insurances__container .insurances__container__insurance .insurance__type__container {
+  position: relative;
   max-width: calc(33.333% - 14px);
   min-width: 250px;
   padding: 20px;
   border-radius: var(--border-radius-main);
   border: 1px solid var(--main-color-light);
+  overflow: hidden;
 }
 .section__insurances__container .insurances__container__insurance .insurance__type__container .insurance__tupe__img__container {
   max-width: 60px;
@@ -528,6 +530,25 @@ li.active:hover::before {
 }
 .section__insurances__container .insurances__container__insurance .insurance__type__container h3 {
   padding: 20px 0;
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container p,
+.section__insurances__container .insurances__container__insurance .insurance__type__container h3,
+.section__insurances__container .insurances__container__insurance .insurance__type__container img {
+  position: relative;
+  z-index: 2;
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container .insurance__type__hover__element {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 0;
+  transition: var(--transition-medium);
+  background-color: var(--main-color-light);
+  z-index: 1;
+}
+.section__insurances__container .insurances__container__insurance .insurance__type__container:hover .insurance__tupe__img__container img {
+  filter: brightness(0) invert(1);
 }
 
 @media screen and (max-width: 1024px) {
