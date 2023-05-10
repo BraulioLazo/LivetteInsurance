@@ -378,8 +378,13 @@ li.active:hover::before {
   .section__presentation .section__presentation__container .container__presentation .container__presentation__image {
     width: 100%;
   }
-  .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__image {
+    display: flex;
+    justify-content: center;
     max-width: 700px;
+  }
+  .section__presentation .section__presentation__container .container__presentation .container__presentation__image img {
+    width: 80%;
   }
 }
 @media screen and (max-width: 768px) {

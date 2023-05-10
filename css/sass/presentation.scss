@@ -90,9 +90,12 @@
                 }
 
                 .container__presentation__image {
+                    display: flex;
+                    justify-content: center;
+                    max-width: 700px;
 
                     img {
-                        max-width: 700px;
+                        width: 80%;
                     }
                 }
             }
@@ -111,8 +114,8 @@
                     width: 100%;
                 }
 
-                .container__presentation__text{
-                    h1{
+                .container__presentation__text {
+                    h1 {
                         line-height: 45px;
                     }
                 }
