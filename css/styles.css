@@ -182,6 +182,7 @@ strong {
 #header .container__header nav ul.navigation__links {
   display: flex;
   gap: 20px;
+  width: 250px;
   list-style: none;
 }
 #header .container__header nav ul.navigation__links li {
