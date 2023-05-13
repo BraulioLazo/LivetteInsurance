@@ -1,0 +1,160 @@
+.section__about {
+    padding: 100px 20px;
+
+    .section__about__container {
+        flex-wrap: wrap;
+
+        .about__container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            .about__container__text {
+                max-width: 750px;
+
+                h4 {
+                    color: var(--main-color-light);
+                }
+
+                h2 {
+                    padding: 10px 0;
+                }
+
+                .about__container__text__skills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    padding-top: 40px;
+
+                    .skill__container {
+                        display: flex;
+                        gap: 10px;
+                        width: calc(50% - 10px);
+
+                        .skill__container__img {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 5px;
+                            background-color: var(--main-color-one-quater);
+                            transition: var(--transition-short);
+
+
+                            img {
+                                width: 70%;
+                            }
+                        }
+
+                        .skill__container__text {
+                            width: calc(100% - 60px);
+
+                            p {
+                                padding-top: 10px;
+                            }
+                        }
+                    }
+
+                    .skill__container:hover .skill__container__img {
+                        transform: translateY(-10px);
+                        background-color: var(--main-color-light);
+
+                        img {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+
+            .about__container__image {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+
+                .image__container {
+                    width: 80%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .section__about {
+
+        .section__about__container {
+
+            .about__container {
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .about__container__image {
+                    justify-content: center;
+
+                    .image__container {
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section__about {
+
+        .section__about__container {
+
+            .about__container {
+
+                .about__container__text {
+
+                    .about__container__text__skills {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 25px;
+                        padding-top: 40px;
+
+                        .skill__container {
+                            display: flex;
+                            gap: 10px;
+                            width: 300px;
+
+                            .skill__container__img {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 5px;
+                                background-color: var(--main-color-one-quater);
+
+                                img {
+                                    width: 70%;
+                                }
+                            }
+
+                            .skill__container__text {
+                                width: calc(100% - 60px);
+                            }
+                        }
+                    }
+                }
+
+
+
+            }
+        }
+    }
+}

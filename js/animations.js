@@ -129,7 +129,7 @@ const animations = {
             const normalizedX = -(positionX - centerX) / centerX * aspectRatio;
             const normalizedY = (positionY - centerY) / centerY;
 
-            const maxRotation = 15;
+            const maxRotation = 10;
             const rotateY = normalizedY * maxRotation;
             const rotateX = normalizedX * maxRotation;
 
