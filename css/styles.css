@@ -9,6 +9,7 @@
 
 :root {
   --main-color-light: #09AFF4;
+  --main-color-one-quater: #09aef433;
   --main-color-dark: #060922;
   --letter-color-light: white;
   --letter-color-dark: #D1D2D6;
@@ -50,6 +51,7 @@ h1 {
 
 h2 {
   font-size: 50px;
+  line-height: 55px;
 }
 
 h3 {
@@ -567,6 +569,115 @@ li.active:hover::before {
 @media screen and (max-width: 600px) {
   .section__insurances__container .insurances__container__insurance .insurance__type__container {
     max-width: calc(100% - 0px);
+  }
+}
+.section__about {
+  padding: 100px 20px;
+}
+.section__about .section__about__container {
+  flex-wrap: wrap;
+}
+.section__about .section__about__container .about__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.section__about .section__about__container .about__container .about__container__text {
+  max-width: 750px;
+}
+.section__about .section__about__container .about__container .about__container__text h4 {
+  color: var(--main-color-light);
+}
+.section__about .section__about__container .about__container .about__container__text h2 {
+  padding: 10px 0;
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 40px;
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container {
+  display: flex;
+  gap: 10px;
+  width: calc(50% - 10px);
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: var(--main-color-one-quater);
+  transition: var(--transition-short);
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__img img {
+  width: 70%;
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__text {
+  width: calc(100% - 60px);
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__text p {
+  padding-top: 10px;
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container:hover .skill__container__img {
+  transform: translateY(-10px);
+  background-color: var(--main-color-light);
+}
+.section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container:hover .skill__container__img img {
+  filter: brightness(0) invert(1);
+}
+.section__about .section__about__container .about__container .about__container__image {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.section__about .section__about__container .about__container .about__container__image .image__container {
+  width: 80%;
+}
+.section__about .section__about__container .about__container .about__container__image .image__container img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .section__about .section__about__container .about__container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .section__about .section__about__container .about__container .about__container__image {
+    justify-content: center;
+  }
+  .section__about .section__about__container .about__container .about__container__image .image__container img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section__about .section__about__container .about__container .about__container__text .about__container__text__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-top: 40px;
+  }
+  .section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container {
+    display: flex;
+    gap: 10px;
+    width: 300px;
+  }
+  .section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--main-color-one-quater);
+  }
+  .section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__img img {
+    width: 70%;
+  }
+  .section__about .section__about__container .about__container .about__container__text .about__container__text__skills .skill__container .skill__container__text {
+    width: calc(100% - 60px);
   }
 }
 
