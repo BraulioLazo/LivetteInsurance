@@ -1,9 +1,10 @@
 function startProgram() {
 
-    const contactUsBTN = document.querySelector("#btn__contact__us");
-    contactUsBTN.addEventListener("click", () => {
-
-        animations.smoothScroll(contactUsBTN);
+    const contactUsBTN = document.querySelectorAll(".btn__contact__us");
+    contactUsBTN.forEach(element => {
+        element.addEventListener("click", () => {
+            animations.smoothScroll(element);
+        });
     });
 }
 startProgram();
