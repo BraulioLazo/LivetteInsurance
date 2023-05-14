@@ -152,7 +152,7 @@ const animations = {
     },
 
     init: () => {
-        animations.navegationContainer = document.querySelector(".navigation__links");
+        animations.navegationContainer = document.querySelector("nav");
         animations.menuButton = document.querySelector("#hamburger__menu");
         animations.menuLines = document.querySelectorAll(".hamburger__menu__line");
         animations.menuLines = document.querySelectorAll(".hamburger__menu__line");

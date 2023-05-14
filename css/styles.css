@@ -134,6 +134,9 @@ strong {
     font-size: 18px;
     line-height: 22px;
   }
+  body p {
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 768px) {
   body {
@@ -150,6 +153,9 @@ strong {
   body h4 {
     font-size: 16px;
     line-height: 20px;
+  }
+  body p {
+    font-size: 18px;
   }
 }
 #header {
@@ -182,7 +188,6 @@ strong {
 #header .container__header nav ul.navigation__links {
   display: flex;
   gap: 20px;
-  width: 250px;
   list-style: none;
 }
 #header .container__header nav ul.navigation__links li {
@@ -226,7 +231,8 @@ strong {
 #header .container__header nav ul.navigation__links li:hover::before {
   opacity: 1;
 }
-#header .container__header nav #hamburger__menu {
+
+#hamburger__menu {
   display: none;
   background-color: transparent;
   border: none;
@@ -256,20 +262,24 @@ li.active:hover::before {
   #header .container__header .logo__container {
     color: var(--letter-color-light) !important;
   }
+  #header .container__header nav {
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    bottom: 0px;
+    max-width: 250px;
+    transform: translateX(-101%);
+    transition: var(--transition-medium);
+  }
   #header .container__header nav ul {
     display: flex !important;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
-    position: fixed;
-    top: 70px;
-    left: 0px;
-    bottom: 0px;
+    height: 100%;
     padding: 20px;
-    transform: translateX(-101%);
     background-color: var(--main-color-light);
-    transition: var(--transition-medium);
   }
   #header .container__header nav ul li {
     width: 100%;
@@ -280,7 +290,7 @@ li.active:hover::before {
   #header .container__header nav ul li.change__hover__efect :hover a.menu__links:hover {
     color: var(--letter-color-light) !important;
   }
-  #header .container__header nav button#hamburger__menu {
+  button#hamburger__menu {
     display: flex !important;
     justify-content: center;
     flex-wrap: wrap;
@@ -289,23 +299,23 @@ li.active:hover::before {
     height: 20px;
     cursor: pointer;
   }
-  #header .container__header nav button#hamburger__menu span.hamburger__menu__line {
+  button#hamburger__menu span.hamburger__menu__line {
     width: 100%;
     height: 3px;
     border-radius: 5px;
     background-color: var(--letter-color-light) !important;
     transition: var(--transition-medium);
   }
-  header#header .container__header nav #hamburger__menu span.rotate__line__one {
-    transform: rotate(-225deg) translate(6px, -6px);
+  header#header .container__header #hamburger__menu span.rotate__line__one {
+    transform: rotate(-225deg) translate(6px, -6px) !important;
   }
-  header#header .container__header nav #hamburger__menu .display__none {
+  header#header .container__header #hamburger__menu .display__none {
     display: none;
   }
-  header#header .container__header nav #hamburger__menu span.rotate__line__three {
+  header#header .container__header #hamburger__menu span.rotate__line__three {
     transform: rotate(225deg) translate(6px, 6px);
   }
-  #header .container__header nav ul.menu__open {
+  #header .container__header nav.menu__open {
     transform: translateX(0) !important;
   }
 }
@@ -361,7 +371,7 @@ li.active:hover::before {
 .section__presentation .section__presentation__container .container__presentation .container__presentation__text h1 {
   padding: 20px 0;
 }
-.section__presentation .section__presentation__container .container__presentation .container__presentation__text #btn__contact__us {
+.section__presentation .section__presentation__container .container__presentation .container__presentation__text button.btn__contact__us {
   margin-top: 20px;
 }
 .section__presentation .section__presentation__container .container__presentation .container__presentation__image {
@@ -514,6 +524,9 @@ li.active:hover::before {
 .section__insurances__container .insurances__container__description .insurances__container__description__text h4 {
   color: var(--main-color-light);
 }
+.section__insurances__container .insurances__container__description .insurances__container__description__text h2 {
+  padding: 10px 0;
+}
 .section__insurances__container .insurances__container__insurance {
   display: flex;
   flex-wrap: wrap;
@@ -640,6 +653,28 @@ li.active:hover::before {
 .section__about .section__about__container .about__container .about__container__image .image__container img {
   width: 100%;
 }
+.section__about .section__about__container .about__container .reasons__list {
+  max-width: 500px;
+}
+.section__about .section__about__container .about__container .reasons__list .reason__item {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+.section__about .section__about__container .about__container .reasons__list .reason__item .reason__number h2 {
+  margin-top: -12px;
+  color: var(--main-color-light);
+}
+.section__about .section__about__container .about__container:last-child {
+  margin-top: 100px;
+}
+.section__about .section__about__container .about__container:last-child .about__container__text {
+  order: 2;
+}
+.section__about .section__about__container .about__container:last-child .about__container__image {
+  order: 1;
+  justify-content: flex-start;
+}
 
 @media screen and (max-width: 1024px) {
   .section__about .section__about__container .about__container {
@@ -651,6 +686,13 @@ li.active:hover::before {
   }
   .section__about .section__about__container .about__container .about__container__image .image__container img {
     width: 100%;
+  }
+  .section__about .section__about__container .about__container:last-child .about__container__text {
+    order: 1;
+  }
+  .section__about .section__about__container .about__container:last-child .about__container__image {
+    order: 2;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 600px) {

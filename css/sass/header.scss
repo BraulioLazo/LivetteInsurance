@@ -27,10 +27,10 @@
         }
 
         nav {
+
             ul.navigation__links {
                 display: flex;
                 gap: 20px;
-                width: 250px;
                 list-style: none;
 
                 li {
@@ -53,7 +53,7 @@
                 }
 
                 li.active::before {
-                    opacity: 1 ;
+                    opacity: 1;
                     color: var(--letter-color-light);
                     transition: var(--transition-short);
                 }
@@ -83,14 +83,16 @@
                 }
             }
 
-            #hamburger__menu {
-                display: none;
-                background-color: transparent;
-                border: none;
-                outline: none;
-            }
+
         }
     }
+}
+
+#hamburger__menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 header.blue__background {
@@ -124,60 +126,66 @@ li.active:hover::before {
             }
 
             nav {
+                position: fixed;
+                top: 70px;
+                left: 0px;
+                bottom: 0px;
+                max-width: 250px;
+                transform: translateX(-101%);
+                transition: var(--transition-medium);
+
                 ul {
                     display: flex !important;
                     flex-wrap: wrap;
                     justify-content: center;
                     align-items: center;
                     align-content: center;
-                    position: fixed;
-                    top: 70px;
-                    left: 0px;
-                    bottom: 0px;
+                    height: 100%;
                     padding: 20px;
-                    transform: translateX(-101%);
                     background-color: var(--main-color-light);
-                    transition: var(--transition-medium);
 
                     li {
                         width: 100%;
 
                     }
 
-                    li.change__hover__efect :hover{
-                        span{
+                    li.change__hover__efect :hover {
+                        span {
                             color: var(--letter-color-light) !important;
                         }
+
                         a.menu__links:hover {
                             color: var(--letter-color-light) !important;
                         }
                     }
                 }
 
-                button#hamburger__menu {
-                    display: flex !important;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    align-content: space-between;
-                    width: 30px;
-                    height: 20px;
-                    cursor: pointer;
 
-                    span.hamburger__menu__line {
-                        width: 100%;
-                        height: 3px;
-                        border-radius: 5px;
-                        background-color: var(--letter-color-light) !important;
-                        transition: var(--transition-medium);
-                    }
-                }
             }
         }
     }
 
-    header#header .container__header nav #hamburger__menu {
+    button#hamburger__menu {
+        display: flex !important;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+
+        span.hamburger__menu__line {
+            width: 100%;
+            height: 3px;
+            border-radius: 5px;
+            background-color: var(--letter-color-light) !important;
+            transition: var(--transition-medium);
+        }
+    }
+
+    header#header .container__header #hamburger__menu {
         span.rotate__line__one {
-            transform: rotate(-225deg) translate(6px, -6px);
+            transform: rotate(-225deg) translate(6px, -6px) !important;
         }
 
         .display__none {
@@ -191,12 +199,11 @@ li.active:hover::before {
 
     #header {
         .container__header {
-            nav {
-                ul.menu__open {
+            nav.menu__open {
 
-                    transform: translateX(0) !important;
-                }
+                transform: translateX(0) !important;
             }
+
         }
     }
 
