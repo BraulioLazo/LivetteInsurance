@@ -284,6 +284,9 @@ li.active:hover::before {
   #header .container__header nav ul li {
     width: 100%;
   }
+  #header .container__header nav ul li a {
+    font-size: 20px;
+  }
   #header .container__header nav ul li.change__hover__efect :hover span {
     color: var(--letter-color-light) !important;
   }
@@ -317,6 +320,11 @@ li.active:hover::before {
   }
   #header .container__header nav.menu__open {
     transform: translateX(0) !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #header .container__header nav ul li a {
+    font-size: 18px;
   }
 }
 .section__presentation {
@@ -664,6 +672,9 @@ li.active:hover::before {
 .section__about .section__about__container .about__container .reasons__list .reason__item .reason__number h2 {
   margin-top: -12px;
   color: var(--main-color-light);
+}
+.section__about .section__about__container .about__container .reasons__list .reason__item .reason__content p {
+  margin-top: 10px;
 }
 .section__about .section__about__container .about__container:last-child {
   margin-top: 100px;
