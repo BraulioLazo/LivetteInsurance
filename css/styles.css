@@ -665,6 +665,9 @@ li.active:hover::before {
   margin-top: -12px;
   color: var(--main-color-light);
 }
+.section__about .section__about__container .about__container .reasons__list .reason__item .reason__content p {
+  margin-top: 10px;
+}
 .section__about .section__about__container .about__container:last-child {
   margin-top: 100px;
 }
