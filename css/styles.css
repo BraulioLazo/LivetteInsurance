@@ -150,6 +150,10 @@ strong {
     font-size: 30px;
     line-height: 35px;
   }
+  body h3 {
+    font-size: 22px;
+    line-height: 27px;
+  }
   body h4 {
     font-size: 16px;
     line-height: 20px;
@@ -669,9 +673,11 @@ li.active:hover::before {
   gap: 20px;
   margin: 20px 0;
 }
-.section__about .section__about__container .about__container .reasons__list .reason__item .reason__number h2 {
+.section__about .section__about__container .about__container .reasons__list .reason__item .reason__number span.number {
   margin-top: -12px;
   color: var(--main-color-light);
+  font-weight: 800;
+  font-size: 50px;
 }
 .section__about .section__about__container .about__container .reasons__list .reason__item .reason__content p {
   margin-top: 10px;
@@ -692,6 +698,9 @@ li.active:hover::before {
     flex-wrap: wrap;
     gap: 20px;
   }
+  .section__about .section__about__container .about__container .reasons__list .reason__item .reason__number span.number {
+    font-size: 40px;
+  }
   .section__about .section__about__container .about__container .about__container__image {
     justify-content: center;
   }
@@ -707,6 +716,9 @@ li.active:hover::before {
   }
 }
 @media screen and (max-width: 600px) {
+  .section__about .section__about__container .about__container .about__container__text .reasons__list .reason__item .reason__number span.number {
+    font-size: 30px;
+  }
   .section__about .section__about__container .about__container .about__container__text .about__container__text__skills {
     display: flex;
     flex-wrap: wrap;
