@@ -20,10 +20,25 @@
         margin: 0 auto;
 
         .logo__container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
             font-size: 30px;
             font-weight: 800;
             font-style: italic;
             color: var(--main-color-light);
+
+            .logo {
+                width: 50px;
+
+                img {
+                    width: 100%;
+                }
+
+                img.white__logo {
+                    filter: brightness(0) invert(1);
+                }
+            }
         }
 
         nav {
@@ -123,6 +138,7 @@ li.active:hover::before {
         .container__header {
             .logo__container {
                 color: var(--letter-color-light) !important;
+                font-size: 28px;
             }
 
             nav {
@@ -215,6 +231,10 @@ li.active:hover::before {
 @media screen and (max-width: 768px) {
     #header {
         .container__header {
+            .logo__container {
+                font-size: 24px;
+            }
+
             nav {
                 ul {
                     li {

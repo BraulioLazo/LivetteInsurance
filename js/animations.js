@@ -5,10 +5,11 @@ const animations = {
     menuLines: null,
     body: null,
 
-    menuAnimations: (header, logoContainer, elementsToDisableHover) => {
+    menuAnimations: (header, logoContainer, elementsToDisableHover, imgLogo) => {
 
         if (scrollY > 0) {
             header.classList.add("blue__background");
+            imgLogo.classList.add("white__logo");
             logoContainer.style.color = "var(--letter-color-light)";
             elementsToDisableHover.forEach((element) => {
                 element.classList.add("change__hover__efect");
@@ -16,6 +17,7 @@ const animations = {
 
         } else {
             header.classList.remove("blue__background");
+            imgLogo.classList.remove("white__logo");
             logoContainer.style.color = "var(--main-color-light)";
             elementsToDisableHover.forEach((element) => {
                 element.classList.remove("change__hover__efect");
@@ -178,15 +180,31 @@ const animations = {
 
         const header = document.querySelector("#header");
         const logoContainer = document.querySelector('.logo__container');
+        const imgLogo = document.querySelector(".img__logo");
         const elementsToDisableHover = document.querySelectorAll(".element-to-disable-hover");
 
         if (window.innerWidth > 1024) {
-            window.onscroll = () => animations.menuAnimations(header, logoContainer, elementsToDisableHover);
+            window.onscroll = () => animations.menuAnimations(header, logoContainer, elementsToDisableHover, imgLogo);
+        }
+
+        if(window.innerWidth > 1024 && scrollY > 0){
+            animations.menuAnimations(header, logoContainer, elementsToDisableHover, imgLogo);
+        }
+
+        if (header.classList.contains("blue__background")) {
+            imgLogo.classList.add("white__logo");
+        } else {
+            imgLogo.classList.remove("white__logo");
         }
 
         window.addEventListener("resize", () => {
+            if (window.innerWidth < 1024) {
+                imgLogo.classList.add("white__logo");
+            } else if (window.innerWidth > 1024 && !header.classList.contains("blue__background")) {
+                imgLogo.classList.remove("white__logo");
+            }
             if (window.innerWidth > 1024) {
-                window.onscroll = () => animations.menuAnimations(header, logoContainer, elementsToDisableHover);
+                window.onscroll = () => animations.menuAnimations(header, logoContainer, elementsToDisableHover, imgLogo);
             } else {
                 window.onscroll = null;
             }
