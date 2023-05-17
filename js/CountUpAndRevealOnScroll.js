@@ -28,7 +28,7 @@ const CountUpAndRevealOnScroll = {
 
     startAnimationIfVisible: (element, numberToAnimate, animationFunction) => {
         const elementDistance = window.innerHeight - element.getBoundingClientRect().top;
-        if (elementDistance >= 100 && !element.classList.contains("animation-in-progress")) {
+        if (elementDistance >= 200 && !element.classList.contains("animation-in-progress")) {
             if (parseInt(element.innerHTML) == 0) {
                 animationFunction(element, numberToAnimate);
             }
