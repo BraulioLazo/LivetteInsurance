@@ -6,7 +6,7 @@
     right: 0px;
     left: 0px;
     width: 100%;
-    padding: 20px;
+    padding: 12px 20px;
     color: var(--letter-color-light);
     transition: all .3s ease;
     overflow: hidden;
@@ -22,14 +22,16 @@
         .logo__container {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
             font-size: 30px;
             font-weight: 800;
             font-style: italic;
             color: var(--main-color-light);
 
             .logo {
-                width: 50px;
+                display: flex;
+                align-items: center;
+                width: 70px;
 
                 img {
                     width: 100%;
