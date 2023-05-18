@@ -197,6 +197,10 @@ const animations = {
             imgLogo.classList.remove("white__logo");
         }
 
+        if(window.innerWidth < 1024){
+            imgLogo.classList.add("white__logo");
+        }
+
         window.addEventListener("resize", () => {
             if (window.innerWidth < 1024) {
                 imgLogo.classList.add("white__logo");
