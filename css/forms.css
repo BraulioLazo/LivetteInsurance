@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    color: var(--letter-color-light);
+}
+
+:root {
+    --main-color-light: #09AFF4;
+    --main-color-one-quater: #09aef433;
+    --main-color-dark: #060922;
+
+    --letter-color-light: white;
+    --letter-color-dark: #D1D2D6;
+
+    --main-container-width: 1600px;
+
+    --transition-short: 0.3s ease;
+    --transition-medium: 0.6s ease;
+
+    --border-radius-main: 12px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    min-height: 650px;
+    background-color: var(--main-color-dark);
+}
+
+h1 {
+    font-size: 60px;
+    font-style: italic;
+    color: var(--main-color-light);
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 55px;
+}
+
+p {
+    font-size: 20px;
+}
+
+strong{
+    color: var(--main-color-light);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.image__container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.img__to__animate {
+    transform-origin: center center;
+    transition: 0.2s ease;
+}
+
+
+.form__about__section {
+    padding: 0 20px;
+}
+
+.form__about__section__container {
+    width: var(--main-container-width);
+}
+
+.agency__brief {
+    padding: 30px 0;
+    border-bottom: 2px solid var(--main-color-light);
+}
+
+.agency__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.agency__logo img {
+    width: 80px;
+}
+
+.agency__detail {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--main-color-light);
+}
+
+.agency__description {
+    width: 60%;
+}
+
+.agency__description p {
+    max-width: 500px;
+    padding-top: 15px;
+}
+
+.agency__image__container {
+    width: 40%;
+}
+
+.agency__image__container img {
+    width: 100%;
+    border-radius: var(--border-radius-main);
+    transition: var(--transition-short);
+}
+
+
+@media screen and (max-width: 1024px) {
+    h1{
+        font-size: 50px;
+    }
+
+    h2{
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .agency__detail {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    
+    .agency__description {
+        text-align: center;
+        width: 100%;
+    }
+
+    .agency__description p{
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .agency__image__container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1{
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    p{
+        font-size: 18px;
+    }
+}
