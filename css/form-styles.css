@@ -12,10 +12,13 @@
   --main-color-dark: #060922;
   --letter-color-light: white;
   --letter-color-dark: #D1D2D6;
+  --letter-color-dark-half: #d1d2d67e;
   --main-container-width: 1400px;
   --transition-short: 0.3s ease;
   --transition-medium: 0.6s ease;
   --border-radius-main: 12px;
+  --input-border-radius: 5px;
+  --input-border: 1px solid rgba(172, 172, 172, 0.274);
 }
 
 body {
@@ -207,6 +210,107 @@ strong {
   transition: var(--transition-short);
 }
 
+.form__section {
+  padding: 100px 20px;
+}
+.form__section .form__section__container {
+  width: var(--main-container-width);
+}
+.form__section .form__section__container h2 {
+  text-align: center;
+}
+.form__section .form__section__container P {
+  text-align: center;
+  padding-bottom: 60px;
+}
+.form__section .form__section__container P span {
+  color: red;
+}
+.form__section .form__section__container #form__user__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.form__section .form__section__container #form__user__info ::placeholder {
+  color: var(#D1D2D6);
+  font-size: 16px;
+}
+.form__section .form__section__container #form__user__info .form__group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.form__section .form__section__container #form__user__info .form__group .input__group {
+  width: 33%;
+}
+.form__section .form__section__container #form__user__info .form__group .input__group label {
+  color: var(--letter-color-light);
+  font-size: 18px;
+}
+.form__section .form__section__container #form__user__info .form__group .input__group label span {
+  margin-left: 5px;
+  color: red;
+}
+.form__section .form__section__container #form__user__info .form__group .input__group input,
+.form__section .form__section__container #form__user__info .form__group .input__group select {
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--input-border-radius);
+  background-color: var(--main-color-dark);
+  border: var(--input-border);
+  outline: none;
+  font-size: 18px;
+  color: var(--letter-color-light);
+  transition: var(--transition-short);
+}
+.form__section .form__section__container #form__user__info .form__group .input__group input:hover,
+.form__section .form__section__container #form__user__info .form__group .input__group select:hover {
+  border: 1px solid var(--main-color-light);
+}
+.form__section .form__section__container #form__user__info .form__group .input__group input[type=text]:focus,
+.form__section .form__section__container #form__user__info .form__group .input__group select[type=tel]:focus {
+  border: 1px solid var(--main-color-light) !important;
+}
+.form__section .form__section__container #form__user__info .form__group .input__group input:-webkit-autofill,
+.form__section .form__section__container #form__user__info .form__group .input__group input:-webkit-autofill:hover,
+.form__section .form__section__container #form__user__info .form__group .input__group input:-webkit-autofill:focus,
+.form__section .form__section__container #form__user__info .form__group .input__group input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 50px var(--main-color-dark) inset !important;
+  -webkit-text-fill-color: var(--letter-color-light) !important;
+  border: 1px solid rgb(128, 128, 128) !important;
+}
+.form__section .form__section__container #form__user__info .form__group:nth-child(4) .input__group {
+  width: 50%;
+}
+.form__section .form__section__container #form__user__info fieldset {
+  width: 100%;
+  height: 150px;
+  margin-top: 20px;
+  padding: 20px;
+  color: var(--letter-color-light);
+  font-size: 18px;
+  border-radius: var(--border-radius-main);
+  border: var(--input-border);
+  overflow: hidden;
+}
+.form__section .form__section__container #form__user__info fieldset .form__group .input__group {
+  width: 100%;
+}
+.form__section .form__section__container #form__user__info fieldset .form__group:last-child {
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+  .form__section .form__section__container #form__user__info fieldset .form__group {
+    flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info fieldset .form__group .input__group {
+    width: calc(50% - 10px);
+  }
+}
 @media screen and (max-width: 1024px) {
   .form__about__section .form__about__section__container .agency__detail {
     justify-content: center;
@@ -227,12 +331,54 @@ strong {
     width: 80%;
   }
 }
+@media screen and (max-width: 900px) {
+  .form__section .form__section__container #form__user__info .form__group {
+    flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info .form__group .input__group {
+    width: calc(50% - 10px);
+  }
+  .form__section .form__section__container #form__user__info .form__group .input__group label {
+    color: var(--letter-color-light);
+    font-size: 18px;
+  }
+  .form__section .form__section__container #form__user__info .form__group .input__group label span {
+    margin-left: 5px;
+    color: red;
+  }
+  .form__section .form__section__container #form__user__info .form__group:nth-child(4) .input__group {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .form__about__section .form__about__section__container .agency__brief .agency__logo h1 {
     font-size: 35px;
   }
   .form__about__section .form__about__section__container .agency__detail .agency__description p {
     font-size: 18px;
+  }
+  .form__section .form__section__container #form__user__info .form__group {
+    flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info .form__group .input__group {
+    width: 100%;
+  }
+  .form__section .form__section__container #form__user__info .form__group .input__group label {
+    color: var(--letter-color-light);
+    font-size: 18px;
+  }
+  .form__section .form__section__container #form__user__info .form__group .input__group label span {
+    margin-left: 5px;
+    color: red;
+  }
+  .form__section .form__section__container #form__user__info .form__group:nth-child(4) .input__group {
+    width: 100%;
+  }
+  .form__section .form__section__container #form__user__info fieldset {
+    height: 230px;
+  }
+  .form__section .form__section__container #form__user__info fieldset .form__group .input__group {
+    width: 100%;
   }
 }
 

@@ -44,7 +44,7 @@
                         color: var(--letter-color-light);
                         border-radius: 5px;
                         outline: none;
-                        border: 1px solid rgba(172, 172, 172, 0.274);
+                        border: var(--input-border);
                         background-color: transparent;
                         transition: var(--transition-short);
                     }
