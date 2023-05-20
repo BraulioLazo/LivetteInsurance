@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de agradecimiento de Livette Insurance para nuestros apreciados clientes.">
+    <meta name="keywords" content="Seguros, Livette Insurance, Agradecimiento, Clientes">
+    <meta name="author" content="Livette Insurance">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
     <link rel="stylesheet" href="../css/form-styles.css">
-    <title> Formulario de Cliente </title>
+    <title>Bienvenido a Nuestra Familia Livette Insurance</title>
 </head>
+
 
 <body>
     <main>
         <section class="form__about__section" id="form__about__section">
-            <div class="form__about__section__container section__container">
+            <div class="form__about__section__container">
                 <div class="agency__brief">
                     <div class="agency__logo">
                         <img src="../assets/images/Logo/IMG_4930.png" alt="">
@@ -32,13 +36,14 @@
                             Queremos tomarnos un momento para <strong> agradecerte sinceramente</strong>
                             por elegir nuestra agencia de seguros. En más de 7 años
                             de servicio, nos hemos comprometido a brindar <strong> seguridad
-                            y tranquilidad </strong> a nuestros clientes, y estamos encantados
+                                y tranquilidad </strong> a nuestros clientes, y estamos encantados
                             de que te hayas unido a <strong> nuestra familia</strong>.
                         </p>
                         <p>
                             Tu confianza en nosotros reafirma nuestro <strong> compromiso con
-                            la excelencia</strong>, la <strong> atención personalizada </strong>y el <strong>asesoramiento
-                            integral</strong>. Valoramos tu elección y estamos listos para
+                                la excelencia</strong>, la <strong> atención personalizada </strong>y el
+                            <strong>asesoramiento
+                                integral</strong>. Valoramos tu elección y estamos listos para
                             adaptar nuestras pólizas a tus necesidades específicas,
                             brindándote <strong> la mejor protección posible</strong>.
                         </p>
@@ -54,10 +59,145 @@
 
 
         <section class="form__section" id="form__section">
-            <div class="form__section__container"></div>
+            <div class="form__section__container">
+                <h2>Por favor, <strong>completa</strong> el formulario a continuación:</h2>
+                <p>Ten en cuenta que todos los campos obligatorios estan marcados con un (<span>*</span>)</p>
+
+                <form action="" id="form__user__info">
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user_name">Nombre<span>*</span>:</label><br>
+                            <input type="text" id="user_name" name="user_name" placeholder="Nombre(s) y Apellidos" required>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user_birth_date">Fecha de Nacimiento<span>*</span>:</label><br>
+                            <input type="date" id="user_birth_date" name="user_birth_date" required>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user_address">Dirección completa<span>*</span>:</label><br>
+                            <input type="text" id="user_address" name="user_address" required placeholder="Dirección completa (Código de Área etc..)">
+                        </div>
+
+                    </div>
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user__phone__number">Número de Teléfono<span>*</span>:</label><br>
+                            <input type="tel" id="user__phone__number" name="user__phone__number" placeholder="(123) 456-7890" required>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user_email">Correo Electrónico:</label><br>
+                            <input type="email" id="user_email" name="user_email" placeholder="(Opcional)">
+                        </div>
+
+                    </div>
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user__social__security">Número de Seguridad Social<span>*</span>:</label><br>
+                            <input type="text" id="user__social__security" name="user__social__security" required maxlength="11" placeholder="123-45-6789">
+                        </div>
+
+                        <div class="input__group">
+                            <label for="estatus_migratorio">Estatus Migratorio<span>*</span>:</label><br>
+                            <select id="estatus_migratorio" name="estatus_migratorio" required>
+                                <option value="">Por favor selecciona una opción</option>
+                                <option value="permiso_trabajo">Permiso de Trabajo</option>
+                                <option value="residente">Residente</option>
+                                <option value="ciudadano">Ciudadano</option>
+                            </select>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user_income">Ingresos<span>*</span>:</label><br>
+                            <input type="number" id="user_income" name="user_income" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user_employer_name">Nombre del Empleador<span>*</span>:</label><br>
+                            <input type="text" id="user_employer_name" name="user_employer_name">
+                        </div>
+
+                    </div>
+
+                    <fieldset id="fieldset__spouse">
+                        <legend>Información sobre el cónyuge</legend>
+                    
+                        <div class="form__group">
+                    
+                            <div class="input__group">
+                                <label for="taxes_with_spouse">¿Hace los taxes con su cónyugue?<span>*</span>:</label><br>
+                                <select id="taxes_with_spouse" name="taxes_with_spouse" required>
+                                    <option value="">Por favor selecciona una opción</option>
+                                    <option value="si">Si</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="input__group">
+                                <label for="include_in_insurance">¿Estará incluido en el seguro?<span>*</span>:</label><br>
+                                <select id="include_in_insurance" name="incluir_en_seguro" required>
+                                    <option value="">Por favor selecciona una opción</option>
+                                    <option value="si">Si</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+
+                        <div class="form__group">
+
+                            <div class="input__group">
+                                <label for="spouse__name">Nombre del Cónyuge<span>*</span>:</label>
+                                <input type="text" id="spouse__name" class="input__spouse" name="nombre_conyugue">
+                            </div>
+                        
+                            <div class="input__group">
+                                <label for="spouse__birth__date">Fecha de Nacimiento<span>*</span>:</label>
+                                <input type="date" id="spouse__birth__date" class="input__spouse" name="fecha_nacimiento_conyugue">
+                            </div>
+                        
+                            <div class="input__group">
+                                <label for="spouse__social__security">Número de Seguridad Social<span>*</span>:</label>
+                                <input type="text" id="spouse__social__security" class="input__spouse" name="seguridad_social_conyugue" maxlength="11" required>
+                            </div>
+                        
+                            <div class="input__group">
+                                <label for="spouse__legal__status">Estatus Migratorio<span>*</span>:</label>
+                                <select id="spouse__legal__status" class="input__spouse" name="estatus_migratorio_conyugue">
+                                    <option value="">Por favor selecciona una opción</option>
+                                    <option value="permiso_trabajo">Permiso de Trabajo</option>
+                                    <option value="residente">Residente</option>
+                                    <option value="ciudadano">Ciudadano</option>
+                                </select>
+                            </div>
+                        
+                        </div>
+                        
+
+
+                    
+                    </fieldset>
+                    
+                </form>
+
+
+            </div>
         </section>
     </main>
     <script src="../js/image3DEffect.js"></script>
+    <script src="/js/formHandlers.js"></script>
 </body>
 
 </html>
