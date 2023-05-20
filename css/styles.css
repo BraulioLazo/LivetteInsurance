@@ -13,10 +13,13 @@
   --main-color-dark: #060922;
   --letter-color-light: white;
   --letter-color-dark: #D1D2D6;
+  --letter-color-dark-half: #d1d2d67e;
   --main-container-width: 1400px;
   --transition-short: 0.3s ease;
   --transition-medium: 0.6s ease;
   --border-radius-main: 12px;
+  --input-border-radius: 5px;
+  --input-border: 1px solid rgba(172, 172, 172, 0.274);
 }
 
 body {
@@ -482,7 +485,7 @@ li.active:hover::before {
   color: var(--letter-color-light);
   border-radius: 5px;
   outline: none;
-  border: 1px solid rgba(172, 172, 172, 0.274);
+  border: var(--input-border);
   background-color: transparent;
   transition: var(--transition-short);
 }
