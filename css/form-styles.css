@@ -232,10 +232,6 @@ strong {
   gap: 20px;
   width: 100%;
 }
-.form__section .form__section__container #form__user__info ::placeholder {
-  color: var(#D1D2D6);
-  font-size: 16px;
-}
 .form__section .form__section__container #form__user__info .form__group {
   display: flex;
   justify-content: center;
@@ -244,6 +240,11 @@ strong {
 }
 .form__section .form__section__container #form__user__info .form__group .input__group {
   width: 33%;
+}
+.form__section .form__section__container #form__user__info .form__group .input__group ::placeholder {
+  text-transform: none;
+  color: var(#D1D2D6);
+  font-size: 16px;
 }
 .form__section .form__section__container #form__user__info .form__group .input__group label {
   color: var(--letter-color-light);
@@ -301,6 +302,12 @@ strong {
 }
 .form__section .form__section__container #form__user__info fieldset .form__group:last-child {
   padding-top: 40px;
+}
+.form__section .form__section__container #form__user__info #submit__form__container {
+  width: 100%;
+}
+.form__section .form__section__container #form__user__info #submit__form__container #form_send_status {
+  padding: 10px;
 }
 
 @media screen and (max-width: 1200px) {

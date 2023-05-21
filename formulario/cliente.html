@@ -106,7 +106,7 @@
                         <div class="input__group">
                             <label for="user__social__security">Número de Seguridad Social<span>*</span>:</label><br>
                             <input type="text" id="user__social__security" name="cliente__social__security" required
-                               minlength="10" maxlength="11" placeholder="123-45-6789">
+                                minlength="10" maxlength="11" placeholder="123-45-6789">
                         </div>
 
                         <div class="input__group">
@@ -121,7 +121,8 @@
 
                         <div class="input__group">
                             <label for="user__income">Ingresos<span>*</span>:</label><br>
-                            <input type="number" id="user__income" name="ingresos" placeholder="Ingresos Anuales." required>
+                            <input type="number" id="user__income" name="ingresos" placeholder="Ingresos Anuales."
+                                required>
                         </div>
 
                     </div>
@@ -130,7 +131,8 @@
 
                         <div class="input__group">
                             <label for="user_employer_name">Nombre del Empleador<span>*</span>:</label><br>
-                            <input type="text" id="user_employer_name" name="empleador" required placeholder="Compañia donde trabaja.">
+                            <input type="text" id="user_employer_name" name="empleador" required
+                                placeholder="Compañía donde trabaja.">
                         </div>
 
                     </div>
@@ -144,8 +146,8 @@
                                 <label for="taxes_with_spouse">¿Hace los taxes con su
                                     cónyugue?<span>*</span>:</label><br>
                                 <select id="taxes_with_spouse" name="taxes_con_conyugue" required>
-                                    <option value="">selecciona una opción</option>
-                                    <option value="si">Si</option>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="si">Sí</option>
                                     <option value="no">No</option>
                                 </select>
                             </div>
@@ -166,7 +168,8 @@
 
                             <div class="input__group">
                                 <label for="spouse__name">Nombre del Cónyuge<span>*</span>:</label>
-                                <input type="text" id="spouse__name" class="input__spouse" name="nombre_conyugue" placeholder="Nombre(s) y Apellidos.">
+                                <input type="text" id="spouse__name" class="input__spouse" name="nombre_conyugue"
+                                    placeholder="Nombre(s) y Apellidos." style="text-transform: capitalize;">
                             </div>
 
                             <div class="input__group">
@@ -178,7 +181,7 @@
                             <div class="input__group">
                                 <label for="spouse__social__security">Número de Seguro Social<span>*</span>:</label>
                                 <input type="text" id="spouse__social__security" class="input__spouse"
-                                    name="seguridad_social_conyugue" maxlength="11" placeholder="123-45-6789">
+                                    name="conyugue_social_security" maxlength="11" placeholder="123-45-6789">
                             </div>
 
                             <div class="input__group">
@@ -196,10 +199,13 @@
 
                     </fieldset>
 
-                    <div class="input__group">
+
+                    <div class="input__group" id="submit__form__container">
                         <p id="form_send_status"></p>
                         <button type="submit" id="submit__form" class="btn">Enviar Datos</button>
                     </div>
+
+
                 </form>
 
 

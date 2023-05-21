@@ -83,11 +83,6 @@
             gap: 20px;
             width: 100%;
 
-            ::placeholder {
-                color: var(#D1D2D6);
-                font-size: 16px;
-            }
-
             .form__group {
                 display: flex;
                 justify-content: center;
@@ -96,6 +91,12 @@
 
                 .input__group {
                     width: 33%;
+
+                    ::placeholder {
+                        text-transform: none;
+                        color: var(#D1D2D6);
+                        font-size: 16px;
+                    }
 
                     label {
                         color: var(--letter-color-light);
@@ -174,6 +175,13 @@
                 }
             }
 
+            #submit__form__container{
+                width: 100%;
+
+                #form_send_status{
+                    padding: 10px;
+                }
+            }
         }
     }
 }
