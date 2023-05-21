@@ -63,23 +63,25 @@
                 <h2>Por favor, <strong>completa</strong> el formulario a continuación:</h2>
                 <p>Ten en cuenta que todos los campos obligatorios están marcados con un (<span>*</span>)</p>
 
-                <form action="" id="form__user__info">
+                <form action="https://formspree.io/f/xwkjjeqe" method="POST" id="form__user__info">
 
                     <div class="form__group">
 
                         <div class="input__group">
                             <label for="user_name">Nombre<span>*</span>:</label><br>
-                            <input type="text" id="user_name" name="user_name" placeholder="Nombre(s) y Apellidos" required>
+                            <input type="text" id="user_name" name="nombre_de_cliente"
+                                placeholder="Nombre(s) y Apellidos." required style="text-transform: capitalize;">
                         </div>
 
                         <div class="input__group">
                             <label for="user_birth_date">Fecha de Nacimiento<span>*</span>:</label><br>
-                            <input type="date" id="user_birth_date" name="user_birth_date" required>
+                            <input type="date" id="user_birth_date" name="fecha_de_nacimiento" required>
                         </div>
 
                         <div class="input__group">
                             <label for="user_address">Dirección completa<span>*</span>:</label><br>
-                            <input type="text" id="user_address" name="user_address" required placeholder="Dirección completa (Código de Área etc..)">
+                            <input type="text" id="user_address" name="direccion" required
+                                placeholder="Calle, Apt, Código de Área etc..." style="text-transform: capitalize;">
                         </div>
 
                     </div>
@@ -88,12 +90,13 @@
 
                         <div class="input__group">
                             <label for="user__phone__number">Número de Teléfono<span>*</span>:</label><br>
-                            <input type="tel" id="user__phone__number" name="user__phone__number" placeholder="(123) 456-7890" required>
+                            <input type="tel" id="user__phone__number" name="numero_de_telefono"
+                                placeholder="(123) 456-7890" required>
                         </div>
 
                         <div class="input__group">
-                            <label for="user_email">Correo Electrónico:</label><br>
-                            <input type="email" id="user_email" name="user_email" placeholder="(Opcional)">
+                            <label for="user__email">Correo Electrónico:</label><br>
+                            <input type="email" id="user__email" name="email" placeholder="(Opcional)">
                         </div>
 
                     </div>
@@ -102,22 +105,23 @@
 
                         <div class="input__group">
                             <label for="user__social__security">Número de Seguridad Social<span>*</span>:</label><br>
-                            <input type="text" id="user__social__security" name="user__social__security" required maxlength="11" placeholder="123-45-6789">
+                            <input type="text" id="user__social__security" name="cliente__social__security" required
+                               minlength="10" maxlength="11" placeholder="123-45-6789">
                         </div>
 
                         <div class="input__group">
-                            <label for="estatus_migratorio">Estatus Migratorio<span>*</span>:</label><br>
-                            <select id="estatus_migratorio" name="estatus_migratorio" required>
-                                <option value="">Por favor selecciona una opción</option>
-                                <option value="permiso_trabajo">Permiso de Trabajo</option>
+                            <label for="migratory__status">Estatus Migratorio<span>*</span>:</label><br>
+                            <select id="migratory__status" name="estatus_migratorio" required>
+                                <option value="">selecciona una opción</option>
+                                <option value="permiso_de_trabajo">Permiso de Trabajo</option>
                                 <option value="residente">Residente</option>
                                 <option value="ciudadano">Ciudadano</option>
                             </select>
                         </div>
 
                         <div class="input__group">
-                            <label for="user_income">Ingresos<span>*</span>:</label><br>
-                            <input type="number" id="user_income" name="user_income" required>
+                            <label for="user__income">Ingresos<span>*</span>:</label><br>
+                            <input type="number" id="user__income" name="ingresos" placeholder="Ingresos Anuales." required>
                         </div>
 
                     </div>
@@ -126,70 +130,76 @@
 
                         <div class="input__group">
                             <label for="user_employer_name">Nombre del Empleador<span>*</span>:</label><br>
-                            <input type="text" id="user_employer_name" name="user_employer_name">
+                            <input type="text" id="user_employer_name" name="empleador" required placeholder="Compañia donde trabaja.">
                         </div>
 
                     </div>
 
                     <fieldset id="fieldset__spouse">
                         <legend>Información sobre el cónyuge</legend>
-                    
+
                         <div class="form__group">
-                    
+
                             <div class="input__group">
-                                <label for="taxes_with_spouse">¿Hace los taxes con su cónyugue?<span>*</span>:</label><br>
-                                <select id="taxes_with_spouse" name="taxes_with_spouse" required>
-                                    <option value="">Por favor selecciona una opción</option>
+                                <label for="taxes_with_spouse">¿Hace los taxes con su
+                                    cónyugue?<span>*</span>:</label><br>
+                                <select id="taxes_with_spouse" name="taxes_con_conyugue" required>
+                                    <option value="">selecciona una opción</option>
                                     <option value="si">Si</option>
                                     <option value="no">No</option>
                                 </select>
                             </div>
 
                             <div class="input__group">
-                                <label for="include_in_insurance">¿Estará incluido en el seguro?<span>*</span>:</label><br>
+                                <label for="include_in_insurance">¿Estará incluido en el
+                                    seguro?<span>*</span>:</label><br>
                                 <select id="include_in_insurance" name="incluir_en_seguro" required>
-                                    <option value="">Por favor selecciona una opción</option>
-                                    <option value="si">Si</option>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="si">Sí</option>
                                     <option value="no">No</option>
                                 </select>
                             </div>
-                            
+
                         </div>
 
                         <div class="form__group">
 
                             <div class="input__group">
                                 <label for="spouse__name">Nombre del Cónyuge<span>*</span>:</label>
-                                <input type="text" id="spouse__name" class="input__spouse" name="nombre_conyugue">
+                                <input type="text" id="spouse__name" class="input__spouse" name="nombre_conyugue" placeholder="Nombre(s) y Apellidos.">
                             </div>
-                        
+
                             <div class="input__group">
                                 <label for="spouse__birth__date">Fecha de Nacimiento<span>*</span>:</label>
-                                <input type="date" id="spouse__birth__date" class="input__spouse" name="fecha_nacimiento_conyugue">
+                                <input type="date" id="spouse__birth__date" class="input__spouse"
+                                    name="fecha_nacimiento_conyugue">
                             </div>
-                        
+
                             <div class="input__group">
-                                <label for="spouse__social__security">Número de Seguridad Social<span>*</span>:</label>
-                                <input type="text" id="spouse__social__security" class="input__spouse" name="seguridad_social_conyugue" maxlength="11" required>
+                                <label for="spouse__social__security">Número de Seguro Social<span>*</span>:</label>
+                                <input type="text" id="spouse__social__security" class="input__spouse"
+                                    name="seguridad_social_conyugue" maxlength="11" placeholder="123-45-6789">
                             </div>
-                        
+
                             <div class="input__group">
                                 <label for="spouse__legal__status">Estatus Migratorio<span>*</span>:</label>
-                                <select id="spouse__legal__status" class="input__spouse" name="estatus_migratorio_conyugue">
-                                    <option value="">Por favor selecciona una opción</option>
-                                    <option value="permiso_trabajo">Permiso de Trabajo</option>
+                                <select id="spouse__legal__status" class="input__spouse"
+                                    name="estatus_migratorio_conyugue">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="permiso_de_trabajo">Permiso de Trabajo</option>
                                     <option value="residente">Residente</option>
                                     <option value="ciudadano">Ciudadano</option>
                                 </select>
                             </div>
-                        
+
                         </div>
-                        
 
-
-                    
                     </fieldset>
-                    
+
+                    <div class="input__group">
+                        <p id="form_send_status"></p>
+                        <button type="submit" id="submit__form" class="btn">Enviar Datos</button>
+                    </div>
                 </form>
 
 
@@ -198,6 +208,7 @@
     </main>
     <script src="../js/image3DEffect.js"></script>
     <script src="../js/formHandlers.js"></script>
+    <script src="../js/form_submission_client_agent.js"></script>
 </body>
 
 </html>
