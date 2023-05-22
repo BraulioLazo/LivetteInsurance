@@ -281,11 +281,8 @@
 
 @media screen and (max-width: 900px) {
     .form__section {
-
         .form__section__container {
-
             #form__user__info {
-
                 .form__group {
                     flex-wrap: wrap;
 
@@ -355,11 +352,8 @@
 
 
     .form__section {
-
         .form__section__container {
-
             #form__user__info {
-
                 .form__group {
                     flex-wrap: wrap;
 
@@ -375,7 +369,6 @@
                                 color: red;
                             }
                         }
-
                     }
                 }
 
@@ -386,22 +379,47 @@
                 }
 
                 fieldset {
-
                     .form__group {
 
                         .input__group {
                             width: 100%;
                         }
                     }
-
                 }
 
                 #fieldset__spouse {
                     height: 230px;
                 }
-
             }
         }
     }
+}
 
+@media screen and (max-width: 500px) {
+    .form__section {
+        .form__section__container {
+            #form__user__info {
+                fieldset#fieldset__dependant {
+                    height: 230px ;
+
+                    #form__group__fixed {
+                        #input__group {
+                            flex-wrap: wrap;
+
+                            #input__group__qty__dependant {
+                                width: 100% !important;
+
+                                #qty__dependant {
+                                    width: 100% !important;
+                                }
+                            }
+                        }
+
+
+                    }
+
+                }
+            }
+        }
+    }
 }

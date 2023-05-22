@@ -427,5 +427,19 @@ strong {
     height: 230px;
   }
 }
+@media screen and (max-width: 500px) {
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant {
+    height: 230px;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group {
+    flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group #input__group__qty__dependant {
+    width: 100% !important;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group #input__group__qty__dependant #qty__dependant {
+    width: 100% !important;
+  }
+}
 
 /*# sourceMappingURL=form-styles.css.map */

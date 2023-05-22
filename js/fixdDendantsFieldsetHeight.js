@@ -5,8 +5,13 @@ function deployQtyDependants() {
     let valor = document.querySelector("#include_dependant_in_insurance").value.toLowerCase();
     const qtyDependantContainer = document.querySelector("#input__group__qty__dependant");
     const inputQtyDependants = document.querySelector("#qty__dependant");
+    const fieldsetDependientes = document.querySelector("#fieldset__dependant");
+
 
     if (valor == "si") {
+        if (window.innerWidth < 500) {
+            fieldsetDependientes.style.height = "320px";
+        }
         qtyDependantContainer.style.width = "150px";
         qtyDependantContainer.style.marginRight = "0px";
         inputQtyDependants.setAttribute("required", "");
@@ -16,7 +21,9 @@ function deployQtyDependants() {
         }, 500);
 
     } else if (valor !== "si") {
-
+        if (window.innerWidth < 500) {
+            fieldsetDependientes.style.height = "230px";
+        }
         document.querySelector("#form__group__qty__dependant").innerHTML = "";
         document.querySelector("#qty__dependant").value = 0;
         modificarAlturaFieldsetDependientes();
@@ -27,7 +34,7 @@ function deployQtyDependants() {
         setTimeout(() => {
             qtyDependantContainer.style.width = "0px";
             qtyDependantContainer.style.marginRight = "-20px";
-        document.querySelector("#qty__dependant").value = "";
+            document.querySelector("#qty__dependant").value = "";
 
         }, 500);
     }
@@ -48,9 +55,10 @@ function modificarAlturaFieldsetDependientes() {
     } else if (window.innerWidth < 901 && window.innerWidth > 767) {
         fieldsetDependientes.style.height = `${230 + (qtyDependants * 220 + (3 * qtyDependants))}px`;
 
-    } else if (window.innerWidth < 768) {
+    } else if (window.innerWidth < 768 && window.innerWidth > 500) {
         fieldsetDependientes.style.height = `${230 + (qtyDependants * 390 + (3 * qtyDependants))}px`;
-
+    } else if (window.innerWidth < 500 && document.querySelector("#include_dependant_in_insurance").value.toLowerCase() == "si") {
+        fieldsetDependientes.style.height = `${320 + (qtyDependants * 390 + (3 * qtyDependants))}px`;
     }
 }
 
