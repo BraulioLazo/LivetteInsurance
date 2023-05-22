@@ -61,7 +61,7 @@
         <section class="form__section" id="form__section">
             <div class="form__section__container">
                 <h2>Por favor, <strong>completa</strong> el formulario a continuación:</h2>
-                <p>Ten en cuenta que todos los campos obligatorios están marcados con un (<span>*</span>)</p>
+                <p>Ten en cuenta que todos los campos obligatorios están marcados con un (<span>*</span>).</p>
 
                 <form action="https://formspree.io/f/xwkjjeqe" method="POST" id="form__user__info">
 
@@ -81,7 +81,7 @@
                         <div class="input__group">
                             <label for="user_address">Dirección completa<span>*</span>:</label><br>
                             <input type="text" id="user_address" name="direccion" required
-                                placeholder="Calle, Apt, Código de Área etc..." style="text-transform: capitalize;">
+                                placeholder="Calle, Apt, Ciudad, Estado, Zip Code" style="text-transform: capitalize;">
                         </div>
 
                     </div>
@@ -96,7 +96,7 @@
 
                         <div class="input__group">
                             <label for="user__email">Correo Electrónico:</label><br>
-                            <input type="email" id="user__email" name="email" placeholder="(Opcional)">
+                            <input type="email" id="user__email" name="email">
                         </div>
 
                     </div>
@@ -138,7 +138,7 @@
                     </div>
 
                     <fieldset id="fieldset__spouse">
-                        <legend>Información sobre el cónyuge</legend>
+                        <legend>Información sobre Cónyugue</legend>
 
                         <div class="form__group">
 
@@ -200,7 +200,7 @@
                     </fieldset>
 
                     <fieldset id="fieldset__dependant">
-                        <legend>Informacón sobre Dependientes</legend>
+                        <legend>Información sobre Dependientes</legend>
 
                         <div class="form__group" id="form__group__fixed">
 
@@ -226,13 +226,12 @@
                                 </div>
     
                                 <div class="input__group" id="input__group__qty__dependant">
-                                    <label for="qty__dependant">¿Cuantos?<span>*</span>:</label><br>
+                                    <label for="qty__dependant">¿Cuántos?<span>*</span>:</label><br>
                                     <input type="number" id="qty__dependant" placeholder="De 1 a 5"
                                         name="cantidad_dependientes" min="0" max="5" style="padding: 0 10px;">
                                 </div>
                             </div>
                             
-
                         </div>
 
                         <div id="form__group__qty__dependant">

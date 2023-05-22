@@ -7,7 +7,7 @@ function toggleDependentQuantity() {
 
     // Si la respuesta es 'si', desplegamos el contenedor y ajustamos la altura del fieldset
     if (insuranceValue === "si") {
-        if (window.innerWidth < 500) {
+        if (window.innerWidth < 501) {
             dependentFieldset.style.height = "320px";
         }
         dependentQuantityContainer.style.width = "150px";
@@ -20,7 +20,7 @@ function toggleDependentQuantity() {
 
         // Si la respuesta es diferente a 'si', escondemos el contenedor y restablecemos la altura del fieldset
     } else if (insuranceValue !== "si") {
-        if (window.innerWidth < 500) {
+        if (window.innerWidth < 501) {
             dependentFieldset.style.height = "230px";
         }
         document.querySelector("#form__group__qty__dependant").innerHTML = "";
@@ -58,7 +58,7 @@ function adjustDependentFieldsetHeight() {
         dependentFieldset.style.height = `${230 + (dependentsQuantity * 220 + (3 * dependentsQuantity))}px`;
     } else if (window.innerWidth < 768 && window.innerWidth > 500) {
         dependentFieldset.style.height = `${230 + (dependentsQuantity * 390 + (3 * dependentsQuantity))}px`;
-    } else if (window.innerWidth < 500 && document.querySelector("#include_dependant_in_insurance").value.toLowerCase() == "si") {
+    } else if (window.innerWidth < 501 && document.querySelector("#include_dependant_in_insurance").value.toLowerCase() == "si") {
         dependentFieldset.style.height = `${320 + (dependentsQuantity * 390 + (3 * dependentsQuantity))}px`;
     }
 }
