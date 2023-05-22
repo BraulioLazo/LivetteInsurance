@@ -15,7 +15,6 @@
             });
         })
 
-
         // Ajusta la altura del FIELDSET del cónyuge dependiendo del valor seleccionado
         document.querySelector("#include_spouse_in_insurance").addEventListener('change', adjustSpouseFieldsetHeight);
         window.addEventListener('resize', adjustSpouseFieldsetHeight);
