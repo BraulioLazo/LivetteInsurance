@@ -146,11 +146,6 @@
 
             }
 
-            .form__group:nth-child(4) {
-                .input__group {
-                    width: 50%;
-                }
-            }
 
             fieldset {
                 width: 100%;
@@ -166,7 +161,7 @@
                 .form__group {
 
                     .input__group {
-                        width: 100%;
+                        width: calc(50% - 10px);
                     }
                 }
 
@@ -175,10 +170,51 @@
                 }
             }
 
-            #submit__form__container{
+
+            fieldset#fieldset__dependant {
+                transition: var(--transition-medium);
+
+                #form__group__qty__dependant {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 20px 0;
+                    gap: 30px;
+
+                    .form__group {
+                        padding: 20px;
+                        border-radius: var(--border-radius-main);
+                        border: 1px solid var(--main-color-one-quater);
+                    }
+
+
+                }
+
+                .form__group {
+                    #input__group {
+                        display: flex;
+                        gap: 20px;
+                        width: 50%;
+
+                        .input__group:nth-child(1) {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                #input__group__qty__dependant {
+                    width: 0px;
+                    height: 70px;
+                    margin-right: -20px;
+                    overflow: hidden;
+                    transition: all 0.5s ease;
+                    opacity: 0;
+                }
+            }
+
+            #submit__form__container {
                 width: 100%;
 
-                #form_send_status{
+                #form_send_status {
                     padding: 10px;
                 }
             }
@@ -197,12 +233,16 @@
 
                     .form__group {
                         flex-wrap: wrap;
+                    }
+                }
 
-                        .input__group {
+                fieldset#fieldset__dependant {
+                    #form__group__fixed {
+
+                        #input__group {
                             width: calc(50% - 10px);
                         }
                     }
-
                 }
 
             }
@@ -261,14 +301,29 @@
                                 color: red;
                             }
                         }
-
                     }
                 }
 
-                .form__group:nth-child(4) {
-                    .input__group {
-                        width: 100%;
+
+                fieldset#fieldset__dependant {
+                    height: 230px;
+
+                    #form__group__fixed {
+                        flex-wrap: wrap !important;
+
+                        #input__group {
+                            width: 100%;
+                        }
+
+                        .input__group:nth-child(1) {
+                            width: 100%;
+                        }
+
+                        .input__group:nth-child(2) {
+                            width: 100%;
+                        }
                     }
+
                 }
             }
         }
@@ -331,7 +386,7 @@
                 }
 
                 fieldset {
-                    height: 230px;
+
                     .form__group {
 
                         .input__group {
@@ -340,6 +395,11 @@
                     }
 
                 }
+
+                #fieldset__spouse {
+                    height: 230px;
+                }
+
             }
         }
     }

@@ -105,7 +105,7 @@
 
                         <div class="input__group">
                             <label for="user__social__security">Número de Seguridad Social<span>*</span>:</label><br>
-                            <input type="text" id="user__social__security" name="cliente__social__security" required
+                            <input type="text" id="user__social__security" class="input__social__security" name="cliente__social__security" required
                                 minlength="10" maxlength="11" placeholder="123-45-6789">
                         </div>
 
@@ -153,9 +153,9 @@
                             </div>
 
                             <div class="input__group">
-                                <label for="include_in_insurance">¿Estará incluido en el
+                                <label for="include_spouse_in_insurance">¿Estará incluido en el
                                     seguro?<span>*</span>:</label><br>
-                                <select id="include_in_insurance" name="incluir_en_seguro" required>
+                                <select id="include_spouse_in_insurance" name="incluir_conyugue_en_seguro" required>
                                     <option value="">Selecciona una opción</option>
                                     <option value="si">Sí</option>
                                     <option value="no">No</option>
@@ -180,7 +180,7 @@
 
                             <div class="input__group">
                                 <label for="spouse__social__security">Número de Seguro Social<span>*</span>:</label>
-                                <input type="text" id="spouse__social__security" class="input__spouse"
+                                <input type="text" id="spouse__social__security" class="input__spouse input__social__security"
                                     name="conyugue_social_security" maxlength="11" placeholder="123-45-6789">
                             </div>
 
@@ -199,6 +199,47 @@
 
                     </fieldset>
 
+                    <fieldset id="fieldset__dependant">
+                        <legend>Informacón sobre Dependientes</legend>
+
+                        <div class="form__group" id="form__group__fixed">
+
+                            <div class="input__group">
+                                <label for="taxes_with_dependant">¿Tiene Dependes en sus
+                                    taxes?<span>*</span>:</label><br>
+                                <select id="taxes_with_dependant" name="taxes_con_depende" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div id="input__group">
+                                <div class="input__group">
+                                    <label for="include_dependant_in_insurance">¿Estará incluido en el
+                                        seguro?<span>*</span>:</label><br>
+                                    <select id="include_dependant_in_insurance" name="incluir_depende_en_seguro" required>
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="si">Sí</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+    
+                                <div class="input__group" id="input__group__qty__dependant">
+                                    <label for="qty__dependant">¿Cuantos?<span>*</span>:</label><br>
+                                    <input type="number" id="qty__dependant" placeholder="De 1 a 5"
+                                        name="cantidad_dependientes" min="0" max="5" style="padding: 0 10px;">
+                                </div>
+                            </div>
+                            
+
+                        </div>
+
+                        <div id="form__group__qty__dependant">
+
+                        </div>
+
+                    </fieldset>
 
                     <div class="input__group" id="submit__form__container">
                         <p id="form_send_status"></p>
@@ -214,6 +255,10 @@
     </main>
     <script src="../js/image3DEffect.js"></script>
     <script src="../js/formHandlers.js"></script>
+    <script src="../js/fixSpouseFieldsetHeight.js"></script>
+    <script src="../js/fixdDendantsFieldsetHeight.js"></script>
+    <script src="../js/createDependansInputs.js"></script>
+    <script src="../js/initilizeForms.js"> </script>
     <script src="../js/form_submission_client_agent.js"></script>
 </body>
 
