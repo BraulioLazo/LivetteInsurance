@@ -1,79 +1,66 @@
+// Despliega el contenedor para el número de dependientes
+function toggleDependentQuantity() {
+    const insuranceValue = document.querySelector("#include_dependant_in_insurance").value.toLowerCase();
+    const dependentQuantityContainer = document.querySelector("#input__group__qty__dependant");
+    const dependentQuantityInput = document.querySelector("#qty__dependant");
+    const dependentFieldset = document.querySelector("#fieldset__dependant");
 
-
-// Despliega el contenedor de la cantidad de DEPENDIENTES
-function deployQtyDependants() {
-    let valor = document.querySelector("#include_dependant_in_insurance").value.toLowerCase();
-    const qtyDependantContainer = document.querySelector("#input__group__qty__dependant");
-    const inputQtyDependants = document.querySelector("#qty__dependant");
-    const fieldsetDependientes = document.querySelector("#fieldset__dependant");
-
-
-    if (valor == "si") {
+    // Si la respuesta es 'si', desplegamos el contenedor y ajustamos la altura del fieldset
+    if (insuranceValue === "si") {
         if (window.innerWidth < 500) {
-            fieldsetDependientes.style.height = "320px";
+            dependentFieldset.style.height = "320px";
         }
-        qtyDependantContainer.style.width = "150px";
-        qtyDependantContainer.style.marginRight = "0px";
-        inputQtyDependants.setAttribute("required", "");
+        dependentQuantityContainer.style.width = "150px";
+        dependentQuantityContainer.style.marginRight = "0px";
+        dependentQuantityInput.setAttribute("required", "");
 
         setTimeout(() => {
-            qtyDependantContainer.style.opacity = "1";
+            dependentQuantityContainer.style.opacity = "1";
         }, 500);
 
-    } else if (valor !== "si") {
+        // Si la respuesta es diferente a 'si', escondemos el contenedor y restablecemos la altura del fieldset
+    } else if (insuranceValue !== "si") {
         if (window.innerWidth < 500) {
-            fieldsetDependientes.style.height = "230px";
+            dependentFieldset.style.height = "230px";
         }
         document.querySelector("#form__group__qty__dependant").innerHTML = "";
         document.querySelector("#qty__dependant").value = 0;
-        modificarAlturaFieldsetDependientes();
-        qtyDependantContainer.style.opacity = "0";
-        inputQtyDependants.removeAttribute("required");
-
+        adjustDependentFieldsetHeight();
+        dependentQuantityContainer.style.opacity = "0";
+        dependentQuantityInput.removeAttribute("required");
 
         setTimeout(() => {
-            qtyDependantContainer.style.width = "0px";
-            qtyDependantContainer.style.marginRight = "-20px";
+            dependentQuantityContainer.style.width = "0px";
+            dependentQuantityContainer.style.marginRight = "-20px";
             document.querySelector("#qty__dependant").value = "";
-
         }, 500);
     }
 }
-deployQtyDependants();
+toggleDependentQuantity();
 
-function modificarAlturaFieldsetDependientes() {
+// Ajusta la altura del fieldset de dependientes de acuerdo al número de dependientes
+function adjustDependentFieldsetHeight() {
+    const dependentFieldset = document.querySelector("#fieldset__dependant");
+    let dependentsQuantity = document.querySelector("#qty__dependant").value;
 
-    const fieldsetDependientes = document.querySelector("#fieldset__dependant");
-    let qtyDependants = document.querySelector("#qty__dependant").value;
-
-    if (qtyDependants > 5) {
-        qtyDependants = 5;
+    if (dependentsQuantity > 5) {
+        dependentsQuantity = 5;
     }
 
+    // Ajustar la altura basada en el número de dependientes y el ancho de la ventana
+    // Los números mágicos (150, 135, 220, 390) representan las alturas en px para distintos rangos de ancho de la ventana.
+    // Estos números pueden requerir ajuste de acuerdo al diseño específico de tu sitio.
     if (window.innerWidth > 1200) {
-        fieldsetDependientes.style.height = `${150 + (qtyDependants * 135) + (3 * qtyDependants)}px`;
-
+        dependentFieldset.style.height = `${150 + (dependentsQuantity * 135) + (3 * dependentsQuantity)}px`;
     } else if (window.innerWidth < 1200 && window.innerWidth > 900) {
-        fieldsetDependientes.style.height = `${150 + (qtyDependants * 220) + (3 * qtyDependants)}px`;
-
+        dependentFieldset.style.height = `${150 + (dependentsQuantity * 220) + (3 * dependentsQuantity)}px`;
     } else if (window.innerWidth < 901 && window.innerWidth > 767) {
-        fieldsetDependientes.style.height = `${230 + (qtyDependants * 220 + (3 * qtyDependants))}px`;
-
+        dependentFieldset.style.height = `${230 + (dependentsQuantity * 220 + (3 * dependentsQuantity))}px`;
     } else if (window.innerWidth < 768 && window.innerWidth > 500) {
-        fieldsetDependientes.style.height = `${230 + (qtyDependants * 390 + (3 * qtyDependants))}px`;
+        dependentFieldset.style.height = `${230 + (dependentsQuantity * 390 + (3 * dependentsQuantity))}px`;
     } else if (window.innerWidth < 500 && document.querySelector("#include_dependant_in_insurance").value.toLowerCase() == "si") {
-        fieldsetDependientes.style.height = `${320 + (qtyDependants * 390 + (3 * qtyDependants))}px`;
+        dependentFieldset.style.height = `${320 + (dependentsQuantity * 390 + (3 * dependentsQuantity))}px`;
     }
 }
 
-
-// Ajusta la altura del FIELDSET del cónyuge dependiendo del valor seleccionado
-window.addEventListener("load", () => {
-
-    document.querySelector("#include_dependant_in_insurance").addEventListener('change', deployQtyDependants);
-    window.addEventListener('resize', deployQtyDependants);
-
-    document.querySelector("#qty__dependant").addEventListener("change", modificarAlturaFieldsetDependientes);
-    window.addEventListener("resize", modificarAlturaFieldsetDependientes);
-});
 
