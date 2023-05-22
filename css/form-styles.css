@@ -238,6 +238,9 @@ strong {
   gap: 20px;
   width: 100%;
 }
+.form__section .form__section__container #form__user__info .form__group div#user_employer_name_container {
+  width: 66.6%;
+}
 .form__section .form__section__container #form__user__info .form__group .input__group {
   width: 33%;
 }
@@ -368,6 +371,9 @@ strong {
 @media screen and (max-width: 900px) {
   .form__section .form__section__container #form__user__info .form__group {
     flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info .form__group div#user_employer_name_container {
+    width: 100%;
   }
   .form__section .form__section__container #form__user__info .form__group .input__group {
     width: calc(50% - 10px);

@@ -44,7 +44,11 @@ deployQtyDependants();
 function modificarAlturaFieldsetDependientes() {
 
     const fieldsetDependientes = document.querySelector("#fieldset__dependant");
-    const qtyDependants = document.querySelector("#qty__dependant").value;
+    let qtyDependants = document.querySelector("#qty__dependant").value;
+
+    if (qtyDependants > 5) {
+        qtyDependants = 5;
+    }
 
     if (window.innerWidth > 1200) {
         fieldsetDependientes.style.height = `${150 + (qtyDependants * 135) + (3 * qtyDependants)}px`;

@@ -3,6 +3,11 @@ function createDependantFormFields(numberOfDependants) {
 
     // Función interna para crear un array del tamaño especificado
     function createArray() {
+
+        if (numberOfDependants > 5) {
+            numberOfDependants = 5;
+        }
+        
         let array = [];
         // Llena el array con el número de dependientes requerido
         for (let i = 0; i < numberOfDependants; i++) {
