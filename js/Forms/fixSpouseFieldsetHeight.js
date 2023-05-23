@@ -22,27 +22,57 @@ function setSpouseFieldsetHeightForNegative(size) {
 
 // Ajusta la altura del FIELDSET del cónyuge dependiendo del valor seleccionado
 function adjustSpouseFieldsetHeight() {
-    let valor = document.querySelector("#include_spouse_in_insurance").value.toLowerCase();
-    const inputSpouse = document.querySelectorAll(".input__spouse");
+    const spouseInputsContainer = document.querySelector("#form__group__inputs__spouse");
+    const spouseQuestionContainer = document.querySelector("#input__group__spouse__include");
+    let valor = document.querySelector("#taxes_with_spouse").value.toLowerCase();
+
 
     if (valor == "si") {
-        inputSpouse.forEach(element => element.setAttribute("required", ""));
+        spouseQuestionContainer.innerHTML = generateSpouseInsuranceOptionHTML();
+        spouseQuestionContainer.classList.add("open");
+
+        spouseInputsContainer.innerHTML = generateSpouseFormFieldsHTML();
+
+        // Para el número de seguridad social del cónyuge
+        document.querySelectorAll('.input__social__security').forEach(element => {
+            element.addEventListener('input', function (e) {
+                formatSocialSecurityNumber(e);
+            });
+        });
+        spouseQuestionContainer.style.width = "100%";
+        spouseQuestionContainer.style.marginRight = "0";
+        setTimeout(() => {
+            spouseQuestionContainer.style.opacity = "1";
+            spouseInputsContainer.style.opacity = "1";
+        }, 500);
+
 
         if (window.innerWidth > 1200) {
             setSpouseFieldsetHeightForAffirmative('large');
         } else if (window.innerWidth < 1200 && window.innerWidth > 768) {
             setSpouseFieldsetHeightForAffirmative('medium');
-        } else if (window.innerWidth < 768) {
+        } else if (window.innerWidth <= 768 && spouseQuestionContainer.classList.contains("open")) {
             setSpouseFieldsetHeightForAffirmative('small');
         }
 
     } else if (valor !== "si") {
-        inputSpouse.forEach(element => element.removeAttribute("required"));
+
+        spouseQuestionContainer.style.opacity = "0";
+        spouseInputsContainer.style.opacity = "0";
+        spouseQuestionContainer.classList.remove("open");
+
+        setTimeout(() => {
+            spouseQuestionContainer.innerHTML = "";
+            spouseQuestionContainer.style.width = "0";
+
+            spouseQuestionContainer.style.marginRight = "-20px";
+        }, 500);
+
 
         if (window.innerWidth > 768) {
             setSpouseFieldsetHeightForNegative('large');
-        } else {
-            setSpouseFieldsetHeightForNegative('small');
+        } else if(window.innerWidth <= 768 && !spouseQuestionContainer.classList.contains("open")){
+            setSpouseFieldsetHeightForNegative('large');
         }
     }
 }

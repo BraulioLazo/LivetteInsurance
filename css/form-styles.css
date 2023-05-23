@@ -303,6 +303,23 @@ strong {
 .form__section .form__section__container #form__user__info fieldset .form__group:last-child {
   padding-top: 40px;
 }
+.form__section .form__section__container #form__user__info #fieldset__spouse #form__group__question__spouse {
+  flex-wrap: nowrap;
+}
+.form__section .form__section__container #form__user__info #fieldset__spouse #form__group__question__spouse #input__group__taxes__width__spouse {
+  width: 100%;
+  transition: var(--transition-medium);
+}
+.form__section .form__section__container #form__user__info #fieldset__spouse #form__group__question__spouse #input__group__spouse__include {
+  width: 0;
+  margin-right: -20px;
+  transition: var(--transition-medium);
+  opacity: 0;
+}
+.form__section .form__section__container #form__user__info #fieldset__spouse #form__group__inputs__spouse {
+  opacity: 0;
+  transition: var(--transition-medium);
+}
 .form__section .form__section__container #form__user__info fieldset#fieldset__dependant {
   transition: var(--transition-medium);
 }
@@ -408,6 +425,9 @@ strong {
   }
   .form__about__section .form__about__section__container .agency__detail .agency__description p {
     font-size: 18px;
+  }
+  .form__section .form__section__container #form__user__info #fieldset__spouse #form__group__question__spouse {
+    flex-wrap: wrap;
   }
   .form__section .form__section__container #form__user__info .form__group {
     flex-wrap: wrap;
