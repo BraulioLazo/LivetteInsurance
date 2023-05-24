@@ -20,7 +20,7 @@
 
         // Ajusta la altura del FIELDSET del cónyuge dependiendo del valor seleccionado
         document.querySelector("#taxes_with_spouse").addEventListener('change', adjustSpouseFieldsetHeight);
-     //   window.addEventListener('resize', adjustSpouseFieldsetHeight);
+        window.addEventListener('resize', handleWindowResize);
 
 
         // Añadir listeners para los cambios de la opción de seguro y del número de dependientes

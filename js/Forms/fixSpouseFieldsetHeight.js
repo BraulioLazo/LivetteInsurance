@@ -100,6 +100,4 @@ function handleWindowResize() {
     setSpouseFieldsetHeight(size, isAffirmative);
 }
 
-// Agregamos el evento de resize al navegador
-window.addEventListener('resize', handleWindowResize);
 
