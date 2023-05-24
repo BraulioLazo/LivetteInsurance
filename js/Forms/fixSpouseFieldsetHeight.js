@@ -26,11 +26,34 @@ function toggleSpouseElements(isVisible, spouseQuestionContainer, spouseInputsCo
         spouseInputsContainer.style.opacity = "0";
         setTimeout(() => {
             spouseQuestionContainer.innerHTML = "";
+            spouseInputsContainer.innerHTML = "";
             spouseQuestionContainer.style.width = "0";
             spouseQuestionContainer.style.marginRight = "-20px";
         }, 500);
     }
 }
+
+function createSpouseInputs(spouseQuestionContainer, spouseInputsContainer) {
+    spouseQuestionContainer.innerHTML = generateSpouseInsuranceOptionHTML();
+    spouseQuestionContainer.classList.add("open");
+    spouseInputsContainer.innerHTML = generateSpouseFormFieldsHTML();
+
+    // Formatea el número de seguridad social del cónyuge
+    document.querySelectorAll('.input__social__security').forEach(element => {
+        element.addEventListener('input', formatSocialSecurityNumber);
+    });
+
+    spouseQuestionContainer.style.width = "100%";
+    spouseQuestionContainer.style.marginRight = "0";
+
+    toggleSpouseElements(true, spouseQuestionContainer, spouseInputsContainer);
+}
+
+function removeSpouseInputs(spouseQuestionContainer, spouseInputsContainer) {
+    spouseQuestionContainer.classList.remove("open");
+    toggleSpouseElements(false, spouseQuestionContainer, spouseInputsContainer);
+}
+
 
 // Ajusta la altura del FIELDSET del cónyuge dependiendo del valor seleccionado
 function adjustSpouseFieldsetHeight() {
@@ -38,33 +61,43 @@ function adjustSpouseFieldsetHeight() {
     const spouseQuestionContainer = document.querySelector("#input__group__spouse__include");
     const spouseSelection = document.querySelector("#taxes_with_spouse").value.toLowerCase();
 
-    if (spouseSelection === "si") {
-        spouseQuestionContainer.innerHTML = generateSpouseInsuranceOptionHTML();
-        spouseQuestionContainer.classList.add("open");
-        spouseInputsContainer.innerHTML = generateSpouseFormFieldsHTML();
-
-        // Formatea el número de seguridad social del cónyuge
-        document.querySelectorAll('.input__social__security').forEach(element => {
-            element.addEventListener('input', formatSocialSecurityNumber);
-        });
-
-        spouseQuestionContainer.style.width = "100%";
-        spouseQuestionContainer.style.marginRight = "0";
-
-        toggleSpouseElements(true, spouseQuestionContainer, spouseInputsContainer);
+    if (spouseSelection === "si" && !spouseQuestionContainer.classList.contains("open")) {
+        createSpouseInputs(spouseQuestionContainer, spouseInputsContainer);
 
         const size = window.innerWidth > 1200 ? 'large'
             : window.innerWidth > 768 ? 'medium'
                 : 'small';
         setSpouseFieldsetHeight(size, true);
 
-    } else {
-        spouseQuestionContainer.classList.remove("open");
+    } else if (spouseSelection !== "si") {
+        removeSpouseInputs(spouseQuestionContainer, spouseInputsContainer);
 
-        toggleSpouseElements(false, spouseQuestionContainer, spouseInputsContainer);
-
-        const size = window.innerWidth > 768 ? 'large'
-            : !spouseQuestionContainer.classList.contains("open") ? 'large' : 'small';
+        const size = window.innerWidth > 768 ? 'large' :
+            !spouseQuestionContainer.classList.contains("open") ? 'large' : 'small';
         setSpouseFieldsetHeight(size, false);
     }
 }
+
+
+function handleWindowResize() {
+    const spouseInputsContainer = document.querySelector("#form__group__inputs__spouse");
+    const spouseQuestionContainer = document.querySelector("#input__group__spouse__include");
+    const spouseSelection = document.querySelector("#taxes_with_spouse").value.toLowerCase();
+
+    let size;
+
+    if (window.innerWidth > 1200) {
+        size = 'large';
+    } else if (window.innerWidth > 768) {
+        size = 'medium';
+    } else if (window.innerWidth <= 768 && !spouseQuestionContainer.classList.contains("open")) {
+        size = 'large';
+    } else {
+        size = "small";
+    }
+
+    const isAffirmative = spouseSelection === "si" && spouseQuestionContainer.classList.contains("open");
+    setSpouseFieldsetHeight(size, isAffirmative);
+}
+
+
