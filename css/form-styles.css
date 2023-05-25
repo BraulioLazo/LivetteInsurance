@@ -303,6 +303,9 @@ strong {
 .form__section .form__section__container #form__user__info fieldset .form__group:last-child {
   padding-top: 40px;
 }
+.form__section .form__section__container #form__user__info #fieldset__spouse {
+  height: 150px;
+}
 .form__section .form__section__container #form__user__info #fieldset__spouse #form__group__question__spouse {
   flex-wrap: nowrap;
 }
@@ -321,6 +324,7 @@ strong {
   transition: var(--transition-medium);
 }
 .form__section .form__section__container #form__user__info fieldset#fieldset__dependant {
+  height: 150px;
   transition: var(--transition-medium);
 }
 .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__qty__dependant {
@@ -334,21 +338,26 @@ strong {
   border-radius: var(--border-radius-main);
   border: 1px solid var(--main-color-one-quater);
 }
+.form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group #input__group__taxes__with__dependant {
+  width: 100%;
+  transition: var(--transition-medium);
+}
 .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group #input__group {
   display: flex;
   gap: 20px;
-  width: 50%;
+  width: 0%;
+  margin-right: -20px;
+  transition: var(--transition-medium);
+  opacity: 0;
 }
 .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group #input__group .input__group:nth-child(1) {
   width: 100%;
 }
 .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #input__group__qty__dependant {
-  width: 0px;
+  width: 150px;
   height: 70px;
-  margin-right: -20px;
   overflow: hidden;
   transition: all 0.5s ease;
-  opacity: 0;
 }
 .form__section .form__section__container #form__user__info #submit__form__container {
   width: 100%;
@@ -360,6 +369,12 @@ strong {
 @media screen and (max-width: 1200px) {
   .form__section .form__section__container #form__user__info fieldset .form__group {
     flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant {
+    height: 150px;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed {
+    flex-wrap: nowrap;
   }
   .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group {
     width: calc(50% - 10px);
@@ -395,6 +410,9 @@ strong {
   .form__section .form__section__container #form__user__info .form__group .input__group {
     width: calc(50% - 10px);
   }
+  .form__section .form__section__container #form__user__info .form__group .input__group #qty__dependant {
+    width: 150px;
+  }
   .form__section .form__section__container #form__user__info .form__group .input__group label {
     color: var(--letter-color-light);
     font-size: 18px;
@@ -403,19 +421,22 @@ strong {
     margin-left: 5px;
     color: red;
   }
-  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant {
-    height: 230px;
-  }
-  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed {
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group#form__group__fixed {
     flex-wrap: wrap !important;
   }
-  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group {
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group#form__group__fixed #input__group__qty__dependant {
+    max-width: 150px !important;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group#form__group__fixed .input__group {
+    width: 100% !important;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group#form__group__fixed #input__group {
+    width: 0%;
+  }
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group#form__group__fixed .input__group:nth-child(1) {
     width: 100%;
   }
-  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed .input__group:nth-child(1) {
-    width: 100%;
-  }
-  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed .input__group:nth-child(2) {
+  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant .form__group#form__group__fixed .input__group:nth-child(2) {
     width: 100%;
   }
 }
@@ -453,15 +474,13 @@ strong {
     height: 230px;
   }
 }
-@media screen and (max-width: 500px) {
-  .form__section .form__section__container #form__user__info fieldset#fieldset__dependant {
-    height: 230px;
-  }
+@media screen and (max-width: 530px) {
   .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group {
     flex-wrap: wrap;
   }
   .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group #input__group__qty__dependant {
     width: 100% !important;
+    max-width: none !important;
   }
   .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group #input__group__qty__dependant #qty__dependant {
     width: 100% !important;
