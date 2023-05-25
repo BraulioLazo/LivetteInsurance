@@ -1,66 +1,97 @@
-// Despliega el contenedor para el número de dependientes
-function toggleDependentQuantity() {
-    const insuranceValue = document.querySelector("#include_dependant_in_insurance").value.toLowerCase();
-    const dependentQuantityContainer = document.querySelector("#input__group__qty__dependant");
-    const dependentQuantityInput = document.querySelector("#qty__dependant");
-    const dependentFieldset = document.querySelector("#fieldset__dependant");
-
-    // Si la respuesta es 'si', desplegamos el contenedor y ajustamos la altura del fieldset
-    if (insuranceValue === "si") {
-        if (window.innerWidth < 501) {
-            dependentFieldset.style.height = "320px";
-        }
-        dependentQuantityContainer.style.width = "150px";
-        dependentQuantityContainer.style.marginRight = "0px";
-        dependentQuantityInput.setAttribute("required", "");
-
-        setTimeout(() => {
-            dependentQuantityContainer.style.opacity = "1";
-        }, 500);
-
-        // Si la respuesta es diferente a 'si', escondemos el contenedor y restablecemos la altura del fieldset
-    } else if (insuranceValue !== "si") {
-        if (window.innerWidth < 501) {
-            dependentFieldset.style.height = "230px";
-        }
-        document.querySelector("#form__group__qty__dependant").innerHTML = "";
-        document.querySelector("#qty__dependant").value = 0;
-        adjustDependentFieldsetHeight();
-        dependentQuantityContainer.style.opacity = "0";
-        dependentQuantityInput.removeAttribute("required");
-
-        setTimeout(() => {
-            dependentQuantityContainer.style.width = "0px";
-            dependentQuantityContainer.style.marginRight = "-20px";
-            document.querySelector("#qty__dependant").value = "";
-        }, 500);
+// Esta función se encarga de cambiar el tamaño de los contenedores dependiendo del tamaño de la ventana.
+function adjustContainersWidth(dependantsInTaxesContainer, newQuestionsSpouseContainer) {
+    if (window.innerWidth >= 900) {
+        dependantsInTaxesContainer.style.width = "50%";
+        newQuestionsSpouseContainer.style.width = "50%";
+    } else if (window.innerWidth <= 900) {
+        dependantsInTaxesContainer.style.width = "100%";
+        newQuestionsSpouseContainer.style.width = "100%";
     }
 }
-toggleDependentQuantity();
 
-// Ajusta la altura del fieldset de dependientes de acuerdo al número de dependientes
-function adjustDependentFieldsetHeight() {
-    const dependentFieldset = document.querySelector("#fieldset__dependant");
-    let dependentsQuantity = document.querySelector("#qty__dependant").value;
-
-    if (dependentsQuantity > 5) {
-        dependentsQuantity = 5;
-    }
-
-    // Ajustar la altura basada en el número de dependientes y el ancho de la ventana
-    // Los números mágicos (150, 135, 220, 390) representan las alturas en px para distintos rangos de ancho de la ventana.
-    // Estos números pueden requerir ajuste de acuerdo al diseño específico de tu sitio.
+// Esta función se encarga de ajustar la altura del fieldset dependiendo del número de dependientes.
+function adjustFieldsetHeight(dependentFieldset, dependentsQuantity) {
     if (window.innerWidth > 1200) {
         dependentFieldset.style.height = `${150 + (dependentsQuantity * 135) + (3 * dependentsQuantity)}px`;
     } else if (window.innerWidth < 1200 && window.innerWidth > 900) {
         dependentFieldset.style.height = `${150 + (dependentsQuantity * 220) + (3 * dependentsQuantity)}px`;
     } else if (window.innerWidth < 901 && window.innerWidth > 767) {
         dependentFieldset.style.height = `${230 + (dependentsQuantity * 220 + (3 * dependentsQuantity))}px`;
-    } else if (window.innerWidth < 768 && window.innerWidth > 500) {
+    } else if (window.innerWidth < 768 && window.innerWidth >= 530) {
         dependentFieldset.style.height = `${230 + (dependentsQuantity * 390 + (3 * dependentsQuantity))}px`;
-    } else if (window.innerWidth < 501 && document.querySelector("#include_dependant_in_insurance").value.toLowerCase() == "si") {
+    } else if (window.innerWidth < 530) {
         dependentFieldset.style.height = `${320 + (dependentsQuantity * 390 + (3 * dependentsQuantity))}px`;
     }
 }
 
+// Esta función manejará el evento resize
+function handleResize() {
+    const dependentFieldset = document.querySelector("#fieldset__dependant");
+    const qtyDependantElement = document.querySelector("#qty__dependant");
+    const newQuestionsSpouseContainer = document.querySelector("#input__group");
 
+    // Comprobamos si el elemento existe y no está vacío
+    if (qtyDependantElement && qtyDependantElement.value !== '') {
+        let dependentsQuantity = qtyDependantElement.value;
+        adjustFieldsetHeight(dependentFieldset, dependentsQuantity);
+        newQuestionsSpouseContainer.style.width = "100%";
+
+    } else {
+        if (window.innerWidth >= 900) {
+            dependentFieldset.style.height = "150px";
+
+        } else if (window.innerWidth < 900 && window.innerWidth > 530 && qtyDependantElement) {
+            dependentFieldset.style.height = "230px";
+
+        } else if(window.innerWidth < 530 && qtyDependantElement) {
+            dependentFieldset.style.height = "320px";
+        }
+    }
+}
+
+window.addEventListener("resize", handleResize);
+
+
+// La función principal que se encarga de mostrar u ocultar la pregunta de dependientes en el formulario.
+function toggleDependentQuantity() {
+    const dependantsInTaxesContainer = document.querySelector("#input__group__taxes__with__dependant");
+    const dependantsInTaxes = document.querySelector("#taxes_with_dependant").value.toLowerCase();
+    const dependentFieldset = document.querySelector("#fieldset__dependant");
+    const newQuestionsSpouseContainer = document.querySelector("#input__group");
+
+    adjustContainersWidth(dependantsInTaxesContainer, newQuestionsSpouseContainer);
+
+    if (dependantsInTaxes === "si") {
+
+        if (window.innerWidth <= 900 && window.innerWidth >= 530) {
+            dependentFieldset.style.height = "230px";
+        } else if (window.innerWidth < 530) {
+            dependentFieldset.style.height = "320px";
+        }
+        newQuestionsSpouseContainer.innerHTML = createDependantsQuestions();
+
+        document.querySelector("#qty__dependant").addEventListener("change", (e) => {
+            createDependantFormFields(e.target.value);
+            let dependentsQuantity = document.querySelector("#qty__dependant").value;
+            adjustFieldsetHeight(dependentFieldset, dependentsQuantity);
+        });
+
+        newQuestionsSpouseContainer.style.marginRight = "0px";
+        setTimeout(() => {
+            newQuestionsSpouseContainer.style.opacity = "1";
+        }, 500);
+    } else if (dependantsInTaxes !== "si") {
+        newQuestionsSpouseContainer.style.opacity = "0";
+        dependentFieldset.style.height = "150px";
+
+        setTimeout(() => {
+            newQuestionsSpouseContainer.style.marginRight = "-20px";
+
+            newQuestionsSpouseContainer.style.width = "0%";
+            newQuestionsSpouseContainer.innerHTML = "";
+            dependantsInTaxesContainer.style.width = "100%";
+            document.querySelector('#form__group__qty__dependant').innerHTML = "";
+        }, 500);
+    }
+}
+toggleDependentQuantity();

@@ -180,6 +180,8 @@
             }
 
             #fieldset__spouse {
+                height: 150px;
+
                 #form__group__question__spouse {
                     flex-wrap: nowrap;
 
@@ -206,6 +208,7 @@
 
 
             fieldset#fieldset__dependant {
+                height: 150px;
                 transition: var(--transition-medium);
 
                 #form__group__qty__dependant {
@@ -224,10 +227,19 @@
                 }
 
                 .form__group {
+
+                    #input__group__taxes__with__dependant {
+                        width: 100%;
+                        transition: var(--transition-medium);
+                    }
+
                     #input__group {
                         display: flex;
                         gap: 20px;
-                        width: 50%;
+                        width: 0%;
+                        margin-right: -20px;
+                        transition: var(--transition-medium);
+                        opacity: 0;
 
                         .input__group:nth-child(1) {
                             width: 100%;
@@ -236,12 +248,10 @@
                 }
 
                 #input__group__qty__dependant {
-                    width: 0px;
+                    width: 150px;
                     height: 70px;
-                    margin-right: -20px;
                     overflow: hidden;
                     transition: all 0.5s ease;
-                    opacity: 0;
                 }
             }
 
@@ -268,10 +278,14 @@
                     .form__group {
                         flex-wrap: wrap;
                     }
+
                 }
 
                 fieldset#fieldset__dependant {
+                    height: 150px;
+
                     #form__group__fixed {
+                        flex-wrap: nowrap;
 
                         #input__group {
                             width: calc(50% - 10px);
@@ -327,6 +341,10 @@
                     .input__group {
                         width: calc(50% - 10px);
 
+                        #qty__dependant {
+                            width: 150px;
+                        }
+
                         label {
                             color: var(--letter-color-light);
                             font-size: 18px;
@@ -341,13 +359,20 @@
 
 
                 fieldset#fieldset__dependant {
-                    height: 230px;
 
-                    #form__group__fixed {
+                    .form__group#form__group__fixed {
                         flex-wrap: wrap !important;
 
+                        #input__group__qty__dependant {
+                            max-width: 150px !important;
+                        }
+
+                        .input__group {
+                            width: 100% !important;
+                        }
+
                         #input__group {
-                            width: 100%;
+                            width: 0%;
                         }
 
                         .input__group:nth-child(1) {
@@ -440,12 +465,11 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 530px) {
     .form__section {
         .form__section__container {
             #form__user__info {
                 fieldset#fieldset__dependant {
-                    height: 230px;
 
                     #form__group__fixed {
                         #input__group {
@@ -453,6 +477,7 @@
 
                             #input__group__qty__dependant {
                                 width: 100% !important;
+                                max-width: none !important;
 
                                 #qty__dependant {
                                     width: 100% !important;

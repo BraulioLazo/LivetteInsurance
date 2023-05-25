@@ -7,7 +7,7 @@ function createDependantFormFields(numberOfDependants) {
         if (numberOfDependants > 5) {
             numberOfDependants = 5;
         }
-        
+
         let array = [];
         // Llena el array con el número de dependientes requerido
         for (let i = 0; i < numberOfDependants; i++) {
@@ -62,6 +62,29 @@ function createDependantFormFields(numberOfDependants) {
     document.querySelector('#form__group__qty__dependant').innerHTML = dependantsForm;
 }
 
+const createDependantsQuestions = () => {
+    return `
+    <div class="input__group">
+        <label for="include_dependant_in_insurance">¿Estará incluido en el
+            seguro?<span>*</span>:</label><br>
+        <select id="include_dependant_in_insurance" name="incluir_depende_en_seguro"
+            required>
+            <option value="">Selecciona una opción</option>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="input__group" id="input__group__qty__dependant">
+        <label for="qty__dependant">¿Cuántos?<span>*</span>:</label><br>
+        <input type="number" id="qty__dependant" placeholder="De 1 a 5"
+            name="cantidad_dependientes" min="0" max="5" style="padding: 0 10px;" required>
+    </div>
+    `;
+};
+
+
+/*
 document.querySelector("#qty__dependant").addEventListener("change", (element) => {
     createDependantFormFields(element.target.value);
 
@@ -71,3 +94,5 @@ document.querySelector("#qty__dependant").addEventListener("change", (element) =
         });
     });
 });
+
+*/
