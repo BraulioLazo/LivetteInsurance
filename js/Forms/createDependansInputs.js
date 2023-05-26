@@ -25,29 +25,29 @@ function createDependantFormFields(numberOfDependants) {
             <div class="form__group">
                 
                 <div class="input__group">
-                    <label for="dependant__name_${index}">Nombre del Dependiente<span>*</span>:</label>
-                    <input type="text" id="dependant__name_${index}" class="input__dependant"
-                        name="nombre_dependiente_${index}" placeholder="Nombre(s) y Apellidos."
+                    <label for="dependant__name_${index + 1}">Nombre del Dependiente<span>*</span>:</label>
+                    <input type="text" id="dependant__name_${index + 1}" class="input__dependant"
+                        name="nombre_dependiente_${index + 1}" placeholder="Nombre(s) y Apellidos."
                         style="text-transform: capitalize;" required>
                 </div>
     
                 <div class="input__group">
-                    <label for="dependant__birth__date_${index}">Fecha de Nacimiento<span>*</span>:</label>
-                    <input type="date" id="dependant__birth__date_${index}" class="input__dependant"
-                        name="fecha_nacimiento_dependiente_${index}" required>
+                    <label for="dependant__birth__date_${index + 1}">Fecha de Nacimiento<span>*</span>:</label>
+                    <input type="date" id="dependant__birth__date_${index + 1}" class="input__dependant"
+                        name="fecha_nacimiento_dependiente_${index + 1}" required>
                 </div>
     
                 <div class="input__group">
-                    <label for="dependant__social__security_${index}">Número de Seguro
+                    <label for="dependant__social__security_${index + 1}">Número de Seguro
                         Social<span>*</span>:</label>
-                    <input type="text" id="dependant__social__security_${index}" class="input__dependant input__social__security"
-                        name="dependiente_social_security_${index}" maxlength="11" placeholder="123-45-6789" required>
+                    <input type="text" id="dependant__social__security_${index + 1}" class="input__dependant input__social__security"
+                        name="dependiente_social_security_${index + 1}" maxlength="11" placeholder="123-45-6789" required>
                 </div>
     
                 <div class="input__group">
-                    <label for="dependant__legal__status_${index}">Estatus Migratorio<span>*</span>:</label>
-                    <select id="dependant__legal__status_${index}" class="input__dependant"
-                        name="estatus_migratorio_dependiente_${index}" required>
+                    <label for="dependant__legal__status_${index + 1}">Estatus Migratorio<span>*</span>:</label>
+                    <select id="dependant__legal__status_${index + 1}" class="input__dependant"
+                        name="estatus_migratorio_dependiente_${index + 1}" required>
                         <option value="">Selecciona una opción</option>
                         <option value="permiso_de_trabajo">Permiso de Trabajo</option>
                         <option value="residente">Residente</option>
