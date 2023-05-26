@@ -82,17 +82,3 @@ const createDependantsQuestions = () => {
     </div>
     `;
 };
-
-
-/*
-document.querySelector("#qty__dependant").addEventListener("change", (element) => {
-    createDependantFormFields(element.target.value);
-
-    document.querySelectorAll('.input__social__security').forEach(element => {
-        element.addEventListener('input', function (e) {
-            formatSocialSecurityNumber(e);
-        });
-    });
-});
-
-*/

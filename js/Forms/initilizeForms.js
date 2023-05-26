@@ -10,7 +10,7 @@
         });
 
 
-        // Para el número de seguridad social del cónyuge
+        // FORMATEA el número de seguridad social
         document.querySelectorAll('.input__social__security').forEach(element => {
             element.addEventListener('input', function (e) {
                 formatSocialSecurityNumber(e);

@@ -29,12 +29,20 @@ function handleResize() {
     const dependentFieldset = document.querySelector("#fieldset__dependant");
     const qtyDependantElement = document.querySelector("#qty__dependant");
     const newQuestionsSpouseContainer = document.querySelector("#input__group");
+    const taxesWidthDependant = document.querySelector("#input__group__taxes__with__dependant");
 
     // Comprobamos si el elemento existe y no está vacío
     if (qtyDependantElement && qtyDependantElement.value !== '') {
         let dependentsQuantity = qtyDependantElement.value;
         adjustFieldsetHeight(dependentFieldset, dependentsQuantity);
-        newQuestionsSpouseContainer.style.width = "100%";
+        newQuestionsSpouseContainer.style.width = "50%";
+
+        if (window.innerWidth < 900) {
+            newQuestionsSpouseContainer.style.width = "100%";
+        } else {
+            newQuestionsSpouseContainer.style.width = "50%";
+            taxesWidthDependant.style.width = "50%";
+        }
 
     } else {
         if (window.innerWidth >= 900) {
@@ -42,8 +50,9 @@ function handleResize() {
 
         } else if (window.innerWidth < 900 && window.innerWidth > 530 && qtyDependantElement) {
             dependentFieldset.style.height = "230px";
+            newQuestionsSpouseContainer.style.width = "100%";
 
-        } else if(window.innerWidth < 530 && qtyDependantElement) {
+        } else if (window.innerWidth <= 530 && qtyDependantElement) {
             dependentFieldset.style.height = "320px";
         }
     }
@@ -72,9 +81,19 @@ function toggleDependentQuantity() {
 
         document.querySelector("#qty__dependant").addEventListener("change", (e) => {
             createDependantFormFields(e.target.value);
+
+            // FORMATEA el número de seguridad social
+            document.querySelectorAll('.input__social__security').forEach(element => {
+                element.addEventListener('input', function (e) {
+                    formatSocialSecurityNumber(e);
+                });
+            });
+            
             let dependentsQuantity = document.querySelector("#qty__dependant").value;
             adjustFieldsetHeight(dependentFieldset, dependentsQuantity);
         });
+
+      
 
         newQuestionsSpouseContainer.style.marginRight = "0px";
         setTimeout(() => {
