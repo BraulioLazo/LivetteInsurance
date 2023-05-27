@@ -114,7 +114,8 @@
                     }
 
                     input,
-                    select {
+                    select,
+                    textarea#message__textarea {
                         width: 100%;
                         height: 40px;
                         padding: 0 20px;
@@ -122,19 +123,22 @@
                         background-color: var(--main-color-dark);
                         border: var(--input-border);
                         outline: none;
-
                         font-size: 18px;
                         color: var(--letter-color-light);
                         transition: var(--transition-short);
                     }
 
+
+
                     input:hover,
-                    select:hover {
+                    select:hover,
+                    textarea#message__textarea:hover {
                         border: 1px solid var(--main-color-light);
                     }
 
                     input[type="text"]:focus,
-                    select[type="tel"]:focus {
+                    select[type="tel"]:focus,
+                    textarea#message__textarea:focus {
                         border: 1px solid var(--main-color-light) !important;
                     }
 
@@ -150,7 +154,22 @@
 
                 }
 
+                .input__group#input__group__textarea {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
 
+                    label {
+                        width: 100%;
+                    }
+
+                    textarea#message__textarea {
+                        width: 100%;
+                        min-height: 150px;
+                        padding: 10px 20px;
+                        resize: vertical;
+                    }
+                }
             }
 
 
