@@ -1,9 +1,9 @@
-var form = document.getElementById("form__user__info");
+const form = document.getElementById("form__user__info");
     
 async function handleSubmit(event) {
   event.preventDefault();
-  var status = document.getElementById("form_send_status");
-  var data = new FormData(event.target);
+  const status = document.getElementById("form_send_status");
+  const data = new FormData(event.target);
   fetch(event.target.action, {
     method: form.method,
     body: data,
@@ -12,19 +12,19 @@ async function handleSubmit(event) {
     }
   }).then(response => {
     if (response.ok) {
-      status.innerHTML = "Hemos recibido tu mensaje. Te contactaremos lo más pronto posible!";
+      status.innerHTML = "Formulario enviado con éxito. Apreciamos sinceramente tu interés y confianza en nosotros. ¡Gracias por ser parte de nuestra familia Livette Insurance!";
       form.reset()
     } else {
       response.json().then(data => {
         if (Object.hasOwn(data, 'errors')) {
           status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
         } else {
-          status.innerHTML = "Oops! Hemos tenido un problema al enviar el mensaje. Recargue la página y vuelva a enviarlo"
+          status.innerHTML = "Oops! Hemos tenido un problema al enviar el formulario. Recargue la página y vuelva a enviarlo"
         }
       })
     }
   }).catch(error => {
-    status.innerHTML = "Oops! Hemos tenido un problema al enviar el mensaje. Recargue la página y vuelva a enviarlo"
+    status.innerHTML = "Oops! Hemos tenido un problema al enviar el formulario. Recargue la página y vuelva a enviarlo"
   });
 }
 form.addEventListener("submit", handleSubmit)

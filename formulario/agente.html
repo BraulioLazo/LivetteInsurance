@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de agradecimiento de Livette Insurance para nuestros apreciados clientes.">
+    <meta name="keywords" content="Seguros, Livette Insurance, Agradecimiento, Clientes">
+    <meta name="author" content="Livette Insurance">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+    <link rel="stylesheet" href="../css/form-styles.css">
+    <title>Bienvenido a Nuestra Familia Livette Insurance</title>
+</head>
+
+
+<body>
+    <main>
+        <section class="form__about__section" id="form__about__section">
+            <div class="form__about__section__container">
+                <div class="agency__brief">
+                    <div class="agency__logo">
+                        <img src="../assets/images/Logo/IMG_4930.png" alt="">
+                        <h1>Livette Insurance</h1>
+
+                    </div>
+                    <p>Gracias por elegirnos.</p>
+                </div>
+                <div class="agency__detail">
+                    <div class="agency__description">
+                        <h2> Bienvenido a <strong> Nuestra Familia</strong>, Livette Insurance </h2>
+                        <p>
+                            Agradecemos sinceramente <strong> tu decisión de unirte a
+                                nuestro equipo </strong> en nuestra agencia de seguros. A lo
+                            largo de más de 7 años, hemos trabajado para ofrecer
+                            seguridad y tranquilidad a nuestros clientes, y <strong> tu
+                                incorporación refuerza nuestra misión</strong>.
+                        </p>
+                        <p>
+                            <strong> Tu compromiso nos inspira </strong> a mantener altos estándares
+                            de excelencia y atención personalizada. Valoramos <strong> tu
+                                dedicación </strong> y estamos listos para <strong> apoyarte</strong>, adaptándonos
+                            a <strong> tus habilidades específicas</strong>, mientras juntos ofrecemos
+                            a nuestros clientes la mejor protección posible.
+                        </p>
+
+                    </div>
+                    <div class="agency__image__container image__container">
+                        <img src="../assets/images/hero/hero-img.png" alt="Esta será una imagen de mi amiga"
+                            class="agency__image img__to__animate">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="form__section" id="form__section">
+            <div class="form__section__container">
+                <h2>Por favor, <strong>completa</strong> el formulario a continuación:</h2>
+                <p>Ten en cuenta que todos los campos obligatorios están marcados con un (<span>*</span>).</p>
+
+                <form action="https://formspree.io/f/xlekkozq" method="POST" id="form__user__info">
+                    
+                    <div class="form__group">
+                        <div class="input__group" id="input__group__agent__name">
+                            <label for="agent_name">Nombre del Agente<span>*</span>:</label><br>
+                            <input type="text" id="agent_name" name="Nombre_de_Agente"
+                                placeholder="Nombre(s) y Apellidos." required style="text-transform: capitalize;">
+                        </div>
+                    </div>
+
+                    <fieldset id="fieldset__insurance__info">
+                        <legend>Información de Seguro</legend>
+
+                        <div class="form__group">
+                            <div class="input__group">
+                                <label for="insurance-company">Companía de Seguros<span>*</span>:</label><br>
+                                <input type="text" id="insurance-company" name="compania_seguros" placeholder="" required>
+                            </div>
+                        
+                            <div class="input__group">
+                                <label for="plan-name">Nombre del Plan<span>*</span>:</label><br>
+                                <input type="text" id="plan-name" name="nombre_plan" placeholder="" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <div class="input__group">
+                                <label for="tax-credit">Crédito Fiscal<span>*</span>:</label><br>
+                                <input type="text" id="tax-credit" name="credito_fiscal" placeholder="" required>
+                            </div>
+                        
+                            <div class="input__group">
+                                <label for="price">Precio<span>*</span>:</label><br>
+                                <input type="text" id="price" name="precio" placeholder="" required>
+                            </div>
+                        </div>
+                        
+                       
+                        
+                    </fieldset>
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user_name">Nombre<span>*</span>:</label><br>
+                            <input type="text" id="user_name" name="nombre_de_cliente"
+                                placeholder="Nombre(s) y Apellidos." required style="text-transform: capitalize;">
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user_birth_date">Fecha de Nacimiento<span>*</span>:</label><br>
+                            <input type="date" id="user_birth_date" name="fecha_de_nacimiento" required>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user_address">Dirección completa<span>*</span>:</label><br>
+                            <input type="text" id="user_address" name="direccion" required
+                                placeholder="Calle, Apt, Ciudad, Estado, Zip Code" style="text-transform: capitalize;">
+                        </div>
+
+                    </div>
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user__phone__number">Número de Teléfono<span>*</span>:</label><br>
+                            <input type="tel" id="user__phone__number" name="numero_de_telefono"
+                                placeholder="(123) 456-7890" required>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user__email">Correo Electrónico:</label><br>
+                            <input type="email" id="user__email" name="email">
+                        </div>
+
+                    </div>
+
+                    <div class="form__group">
+
+                        <div class="input__group">
+                            <label for="user__social__security">Número de Seguridad Social<span>*</span>:</label><br>
+                            <input type="text" id="user__social__security" class="input__social__security"
+                                name="cliente__social__security" required minlength="10" maxlength="11"
+                                placeholder="123-45-6789">
+                        </div>
+
+                        <div class="input__group">
+                            <label for="migratory__status">Estatus Migratorio<span>*</span>:</label><br>
+                            <select id="migratory__status" name="estatus_migratorio" required>
+                                <option value="">selecciona una opción</option>
+                                <option value="permiso_de_trabajo">Permiso de Trabajo</option>
+                                <option value="residente">Residente</option>
+                                <option value="ciudadano">Ciudadano</option>
+                            </select>
+                        </div>
+
+                        <div class="input__group">
+                            <label for="user__income">Ingresos<span>*</span>:</label><br>
+                            <input type="number" id="user__income" name="ingresos" placeholder="Ingresos Anuales."
+                                required>
+                        </div>
+
+                    </div>
+
+                    <div class="form__group">
+
+                        <div class="input__group" id="user_employer_name_container">
+                            <label for="user_employer_name">Nombre del Empleador<span>*</span>:</label><br>
+                            <input type="text" id="user_employer_name" name="empleador" required
+                                placeholder="Compañía donde trabaja.">
+                        </div>
+
+                    </div>
+
+                    <fieldset id="fieldset__spouse">
+                        <legend>Información sobre Cónyugue</legend>
+
+                        <div class="form__group" id="form__group__question__spouse">
+
+                            <div class="input__group" id="input__group__taxes__width__spouse">
+                                <label for="taxes_with_spouse">¿Hace los taxes con su
+                                    cónyugue?<span>*</span>:</label><br>
+                                <select id="taxes_with_spouse" name="taxes_con_conyugue" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="input__group" id="input__group__spouse__include">
+
+                            </div>
+
+                        </div>
+
+                        <div class="form__group" id="form__group__inputs__spouse">
+
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset id="fieldset__dependant">
+                        <legend>Información sobre Dependientes</legend>
+
+                        <div class="form__group" id="form__group__fixed">
+
+                            <div class="input__group" id="input__group__taxes__with__dependant">
+                                <label for="taxes_with_dependant">¿Tiene Dependes en sus
+                                    taxes?<span>*</span>:</label><br>
+                                <select id="taxes_with_dependant" name="taxes_con_depende" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div id="input__group">
+
+                            </div>
+
+                        </div>
+
+                        <div id="form__group__qty__dependant">
+
+                        </div>
+
+                    </fieldset>
+
+                    <div class="form__group">
+                        <div class="input__group" id="input__group__textarea">
+                            <label for="message__textarea">Mensaje:</label><br>
+                            <textarea name="Message" id="message__textarea"
+                                placeholder="Si tiene alguna Información adicional, por favor escríbala aquí."></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="input__group" id="submit__form__container">
+                        <p id="form_send_status"></p>
+                        <button type="submit" id="submit__form" class="btn">Enviar Datos</button>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+        </section>
+    </main>
+    <script src="../js/image3DEffect.js"></script>
+    <script src="../js/Forms/createSposeInputs.js"></script>
+    <script src="../js/Forms/fixSpouseFieldsetHeight.js"></script>
+    <script src="../js/Forms/fixdDependantsFieldsetHeight.js"></script>
+    <script src="../js/Forms/createDependansInputs.js"></script>
+    <script src="../js/Forms/formHandlers.js"></script>
+    <script src="../js/Forms/initilizeForms.js"> </script>
+    <script src="../js/Forms/form_submission_client_agent.js"></script>
+</body>
+
+</html>

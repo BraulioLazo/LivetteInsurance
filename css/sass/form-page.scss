@@ -170,6 +170,15 @@
                         resize: vertical;
                     }
                 }
+
+                
+            
+            }
+
+            .form__group{
+                #input__group__agent__name{
+                    width: 60%;
+                }
             }
 
 
@@ -196,6 +205,14 @@
                 .form__group:last-child {
                     padding-top: 40px;
                 }
+            }
+
+            fieldset#fieldset__insurance__info{
+                height: auto;
+                margin-bottom: 20px;
+                padding-bottom: 35px;
+
+                
             }
 
             #fieldset__spouse {
@@ -241,8 +258,6 @@
                         border-radius: var(--border-radius-main);
                         border: 1px solid var(--main-color-one-quater);
                     }
-
-
                 }
 
                 .form__group {
@@ -440,6 +455,12 @@
                 #fieldset__spouse {
                     #form__group__question__spouse {
                         flex-wrap: wrap;
+                    }
+                }
+
+                .form__group{
+                    #input__group__agent__name{
+                        width: 100%;
                     }
                 }
 
