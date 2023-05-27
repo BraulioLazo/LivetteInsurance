@@ -303,6 +303,9 @@ strong {
   padding: 10px 20px;
   resize: vertical;
 }
+.form__section .form__section__container #form__user__info .form__group #input__group__agent__name {
+  width: 60%;
+}
 .form__section .form__section__container #form__user__info fieldset {
   width: 100%;
   height: 150px;
@@ -319,6 +322,11 @@ strong {
 }
 .form__section .form__section__container #form__user__info fieldset .form__group:last-child {
   padding-top: 40px;
+}
+.form__section .form__section__container #form__user__info fieldset#fieldset__insurance__info {
+  height: auto;
+  margin-bottom: 20px;
+  padding-bottom: 35px;
 }
 .form__section .form__section__container #form__user__info #fieldset__spouse {
   height: 150px;
@@ -466,6 +474,9 @@ strong {
   }
   .form__section .form__section__container #form__user__info #fieldset__spouse #form__group__question__spouse {
     flex-wrap: wrap;
+  }
+  .form__section .form__section__container #form__user__info .form__group #input__group__agent__name {
+    width: 100%;
   }
   .form__section .form__section__container #form__user__info .form__group {
     flex-wrap: wrap;

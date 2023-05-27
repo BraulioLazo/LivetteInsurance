@@ -6,9 +6,17 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+
    <url>
       <loc>https://www.livetteinsurance.us/formulario/cliente</loc>
-      <lastmod>2023-05-20</lastmod>
+      <lastmod>2023-05-27</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <url>
+      <loc>https://www.livetteinsurance.us/formulario/agente</loc>
+      <lastmod>2023-05-27</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
