@@ -64,8 +64,22 @@
 }
 
 @media screen and (max-width: 768px) {
-    .error__section .error__section__container .content__container .text__container p {
-        font-size: 35px;
-        line-height: 40px;
+    .error__section {
+        .error__section__container {
+            .logo__container{
+                h1{
+                    font-size: 35px;
+                }
+            }
+            .content__container {
+                .text__container {
+                    p {
+                        font-size: 35px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
     }
+
 }

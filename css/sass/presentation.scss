@@ -6,9 +6,9 @@
     width: 100%;
     height: 100%;
     padding: 20px;
-    background-image: url("../assets/images/hero/hero-bg-1.jpg");
+    background-image: url("../assets/images/hero/livette-insurance-owner.jpg");
     background-size: cover;
-    background-position: 85% 0%;
+    background-position: center top;
 
     &__gradient {
         position: absolute;
@@ -17,7 +17,7 @@
         bottom: 0px;
         left: 0px;
         background-color: var(--main-color-dark);
-        opacity: 0.5;
+        opacity: 0.2;
     }
 
     .section__presentation__container {
