@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+:root {
+  --main-color-light: #09AFF4;
+  --main-color-one-quater: #09aef433;
+  --main-color-dark: #060922;
+  --letter-color-light: white;
+  --letter-color-dark: #D1D2D6;
+  --letter-color-dark-half: #d1d2d67e;
+  --main-container-width: 1400px;
+  --transition-short: 0.3s ease;
+  --transition-medium: 0.6s ease;
+  --border-radius-main: 12px;
+  --input-border-radius: 5px;
+  --input-border: 1px solid rgba(172, 172, 172, 0.274);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  background-color: var(--main-color-dark);
+}
+
+.no__scroll {
+  overflow: hidden !important;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--letter-color-light);
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 65px;
+}
+
+h2 {
+  font-size: 50px;
+  line-height: 55px;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--letter-color-dark);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.section__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: var(--main-container-width);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 2px solid var(--main-color-light);
+  border-radius: 5px 20px;
+  outline: none;
+  color: var(--main-color-light);
+  font-size: 18px;
+  background-color: transparent;
+  transition: background-color 0.3s ease-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--letter-color-light);
+  background-color: var(--main-color-light);
+}
+
+strong {
+  color: var(--main-color-light);
+}
+
+.image__container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.img__to__animate {
+  transform-origin: center center;
+  transition: 0.2s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    min-height: 1080px;
+  }
+  body .section__container {
+    max-width: 700px;
+  }
+  body h1 {
+    font-size: 50px;
+    line-height: 55px;
+  }
+  body h2 {
+    font-size: 40px;
+    line-height: 45px;
+  }
+  body h4 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  body p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    min-height: 900px;
+  }
+  body h1 {
+    font-size: 40px;
+    line-height: 45px;
+  }
+  body h2 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  body h3 {
+    font-size: 22px;
+    line-height: 27px;
+  }
+  body h4 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  body p {
+    font-size: 18px;
+  }
+}
+.error__section .error__section__container .logo__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--main-color-light);
+}
+.error__section .error__section__container .logo__container h1 {
+  color: var(--main-color-light);
+}
+.error__section .error__section__container .logo__container img {
+  width: 70px;
+}
+.error__section .error__section__container .content__container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin-top: 60px;
+}
+.error__section .error__section__container .content__container .image__container img {
+  width: 100%;
+}
+.error__section .error__section__container .content__container .text__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.error__section .error__section__container .content__container .text__container p {
+  color: var(--letter-color-light);
+  font-size: 50px;
+  line-height: 55px;
+  font-style: italic;
+  text-align: center;
+}
+.error__section .error__section__container .content__container .text__container a {
+  margin: 40px auto 0 auto;
+  text-decoration: none;
+  background-color: var(--main-color-light);
+  color: var(--letter-color-light);
+}
+.error__section .error__section__container .content__container .text__container a:hover {
+  background-color: transparent;
+  color: var(--main-color-light);
+}
+
+@media screen and (max-width: 768px) {
+  .error__section .error__section__container .content__container .text__container p {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+/*# sourceMappingURL=404.css.map */
