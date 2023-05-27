@@ -88,24 +88,29 @@ function toggleDependentQuantity() {
                     formatSocialSecurityNumber(e);
                 });
             });
-            
+
             let dependentsQuantity = document.querySelector("#qty__dependant").value;
             adjustFieldsetHeight(dependentFieldset, dependentsQuantity);
         });
 
-      
+
 
         newQuestionsSpouseContainer.style.marginRight = "0px";
         setTimeout(() => {
             newQuestionsSpouseContainer.style.opacity = "1";
         }, 500);
     } else if (dependantsInTaxes !== "si") {
+
+        if (dependantsInTaxes !== "si" && window.innerWidth >= 900 && !document.querySelector("#qty__dependant")) {
+            dependantsInTaxesContainer.style.width = "100%";
+            newQuestionsSpouseContainer.style.width = "0%";
+        } 
+        
         newQuestionsSpouseContainer.style.opacity = "0";
         dependentFieldset.style.height = "150px";
 
         setTimeout(() => {
             newQuestionsSpouseContainer.style.marginRight = "-20px";
-
             newQuestionsSpouseContainer.style.width = "0%";
             newQuestionsSpouseContainer.innerHTML = "";
             dependantsInTaxesContainer.style.width = "100%";
