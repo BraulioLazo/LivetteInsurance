@@ -1,4 +1,21 @@
+#error__body {
+    position: relative;
+    height: 100vh;
+    min-height: 760px;
+
+    .error__footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+
 .error__section {
+    display: flex;
+    padding-bottom: 60px;
+
     .error__section__container {
 
         .logo__container {
@@ -25,7 +42,7 @@
             margin-top: 60px;
 
             .image__container {
-
+                margin: 0 auto;
 
                 img {
                     width: 100%;
@@ -63,14 +80,28 @@
     }
 }
 
+
+
 @media screen and (max-width: 768px) {
+    #error__body {
+    
+        min-height: 670px;
+    
+        .error__footer {
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+
     .error__section {
         .error__section__container {
-            .logo__container{
-                h1{
+            .logo__container {
+                h1 {
                     font-size: 35px;
                 }
             }
+
             .content__container {
                 .text__container {
                     p {

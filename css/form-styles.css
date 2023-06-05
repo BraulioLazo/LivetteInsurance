@@ -32,11 +32,6 @@ body {
   overflow: hidden !important;
 }
 
-main {
-  width: 100%;
-  height: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -513,6 +508,10 @@ strong {
   .form__section .form__section__container #form__user__info fieldset#fieldset__dependant #form__group__fixed #input__group #input__group__qty__dependant #qty__dependant {
     width: 100% !important;
   }
+}
+footer .my__footer .footer__container p {
+  padding: 20px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=form-styles.css.map */
