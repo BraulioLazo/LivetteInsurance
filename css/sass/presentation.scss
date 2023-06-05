@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    min-height: 1000px;
+    min-height: 860px;
     padding: 20px;
     background-image: url("../assets/images/hero/livette-insurance-owner.jpg");
     background-size: cover;
@@ -79,6 +79,8 @@
 @media screen and (max-width: 1024px) {
 
     .section__presentation {
+        min-height: 1000px;
+
         .section__presentation__container {
             .container__presentation {
                 flex-wrap: wrap;
