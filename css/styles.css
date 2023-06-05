@@ -33,11 +33,6 @@ body {
   overflow: hidden !important;
 }
 
-main {
-  width: 100%;
-  height: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -846,6 +841,10 @@ li.active:hover::before {
   .section__animated__numbers .section__animated__numbers__container .numbers__animation__container .animated__number__container .animated__number .description {
     font-size: 20px;
   }
+}
+footer .my__footer .footer__container p {
+  padding: 20px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

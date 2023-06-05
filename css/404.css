@@ -32,11 +32,6 @@ body {
   overflow: hidden !important;
 }
 
-main {
-  width: 100%;
-  height: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -164,6 +159,22 @@ strong {
     font-size: 18px;
   }
 }
+#error__body {
+  position: relative;
+  height: 100vh;
+  min-height: 760px;
+}
+#error__body .error__footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.error__section {
+  display: flex;
+  padding-bottom: 60px;
+}
 .error__section .error__section__container .logo__container {
   display: flex;
   align-items: center;
@@ -182,6 +193,9 @@ strong {
   flex-wrap: wrap;
   max-width: 700px;
   margin-top: 60px;
+}
+.error__section .error__section__container .content__container .image__container {
+  margin: 0 auto;
 }
 .error__section .error__section__container .content__container .image__container img {
   width: 100%;
@@ -211,6 +225,12 @@ strong {
 }
 
 @media screen and (max-width: 768px) {
+  #error__body {
+    min-height: 670px;
+  }
+  #error__body .error__footer p {
+    font-size: 14px;
+  }
   .error__section .error__section__container .logo__container h1 {
     font-size: 35px;
   }
@@ -218,6 +238,10 @@ strong {
     font-size: 35px;
     line-height: 40px;
   }
+}
+footer .my__footer .footer__container p {
+  padding: 20px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=404.css.map */

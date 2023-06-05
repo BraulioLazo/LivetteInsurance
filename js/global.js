@@ -1,5 +1,6 @@
-function startProgram() {
 
+
+function setupPage() {
     const contactUsBTN = document.querySelectorAll(".btn__contact__us");
     contactUsBTN.forEach(element => {
         element.addEventListener("click", () => {
@@ -7,4 +8,5 @@ function startProgram() {
         });
     });
 }
-startProgram();
+
+document.addEventListener('DOMContentLoaded', setupPage);
