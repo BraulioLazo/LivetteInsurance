@@ -171,12 +171,12 @@
                     }
                 }
 
-                
-            
+
+
             }
 
-            .form__group{
-                #input__group__agent__name{
+            .form__group {
+                #input__group__agent__name {
                     width: 60%;
                 }
             }
@@ -207,12 +207,12 @@
                 }
             }
 
-            fieldset#fieldset__insurance__info{
+            fieldset#fieldset__insurance__info {
                 height: auto;
                 margin-bottom: 20px;
                 padding-bottom: 35px;
 
-                
+
             }
 
             #fieldset__spouse {
@@ -288,6 +288,61 @@
                     transition: all 0.5s ease;
                 }
             }
+
+            #form__group__file__upload {
+                .input__group {
+                    width: 100%;
+                    max-width: 700px;
+
+                    .drop-zone {
+                        position: relative;
+                        width: 100%;
+                        height: 150px; // Ajusta esto al tamaño que prefieras
+                        border: 2px dashed var(--main-color-light);
+                        border-radius: var(--input-border-radius);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: var(--transition-short);
+
+                        p {
+                            color: var(--letter-color-light);
+                            padding: 0 20px; // Agrega un padding si lo necesitas
+                        }
+
+                        #file__upload {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+
+                        #file__upload:hover {
+                            border-color: var(--main-color-light);
+                        }
+
+
+                    }
+
+                    #file_list {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        gap: 30px;
+
+                        img {
+                            max-width: 150px;
+                        }
+                    }
+                }
+            }
+
 
             #submit__form__container {
                 width: 100%;
@@ -419,6 +474,7 @@
                     }
 
                 }
+
             }
         }
     }
@@ -458,8 +514,8 @@
                     }
                 }
 
-                .form__group{
-                    #input__group__agent__name{
+                .form__group {
+                    #input__group__agent__name {
                         width: 100%;
                     }
                 }
