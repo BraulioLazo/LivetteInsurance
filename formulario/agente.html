@@ -58,7 +58,7 @@
                 <h2>Por favor, <strong>completa</strong> el formulario a continuación:</h2>
                 <p>Ten en cuenta que todos los campos obligatorios están marcados con un (<span>*</span>).</p>
 
-                <form action="https://formspree.io/f/xbjevyvl" method="POST" id="form__user__info">
+                <form action="https://formspree.io/f/xbjevyvl" method="POST" id="form__user__info" enctype="multipart/form-data">
 
                     <div class="form__group">
                         <div class="input__group" id="input__group__agent__name">
@@ -227,6 +227,18 @@
 
                     </fieldset>
 
+                    <div class="form__group" id="form__group__file__upload">
+                        <div class="input__group" id="input__group__file__upload">
+                            <label for="file__upload">Subir imagenes:</label>
+                            <div id="drop_zone" class="drop-zone">
+                                <p>Arrastra y suelta tus archivos aquí o haz click para seleccionarlos</p>
+                                <input type="file" id="file__upload" name="fileUpload" multiple accept="image/*" required>
+                            </div>
+                            <div id="file_list"></div> 
+                        </div>
+                    </div>
+                    
+                    
                     <div class="form__group">
                         <div class="input__group" id="input__group__textarea">
                             <label for="message__textarea">Mensaje:</label><br>
@@ -235,12 +247,12 @@
                         </div>
                     </div>
 
+                    
 
                     <div class="input__group" id="submit__form__container">
                         <p id="form_send_status"></p>
                         <button type="submit" id="submit__form" class="btn">Enviar Datos</button>
                     </div>
-
 
                 </form>
 
