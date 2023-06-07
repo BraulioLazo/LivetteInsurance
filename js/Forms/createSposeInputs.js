@@ -44,14 +44,14 @@ const generateSpouseFormFieldsHTML = () => {
             <div class="input__group">
                 <label for="spouse__employer">Empleador del Cónyuge:</label>
                 <input type="text" id="spouse__employer" class="input__spouse" 
-                       name="empleador_conyugue" placeholder="Nombre del empleador." 
+                       name="empleador_conyugue" placeholder="Nombre del empleador. (Si trabaja)" 
                        style="text-transform: capitalize;">
             </div>
 
             <div class="input__group">
                 <label for="spouse__income">Ingresos del Cónyuge:</label>
                 <input type="text" id="spouse__income" class="input__spouse" 
-                       name="ingresos_conyugue" placeholder="Ingresos anuales">
+                       name="ingresos_conyugue" placeholder="Ingresos anuales. (Si trabaja)">
             </div>
     `;
 };
