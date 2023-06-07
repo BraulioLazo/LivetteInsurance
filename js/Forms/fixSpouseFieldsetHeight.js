@@ -2,7 +2,7 @@
 function setSpouseFieldsetHeight(size, isAffirmative) {
     const fieldset = document.querySelector("#fieldset__spouse");
     const heights = isAffirmative
-        ? { large: "250px", medium: "340px", small: "600px" }
+        ? { large: "430px", medium: "430px", small: "780px" }
         : { large: "150px", small: "230px" };
     fieldset.style.height = heights[size];
     fieldset.style.transition = "0.5s ease";
