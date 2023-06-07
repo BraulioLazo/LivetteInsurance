@@ -51,7 +51,7 @@ const generateSpouseFormFieldsHTML = () => {
             <div class="input__group">
                 <label for="spouse__income">Ingresos del Cónyuge:</label>
                 <input type="text" id="spouse__income" class="input__spouse" 
-                       name="ingresos_conyugue" placeholder="Ingresos mensuales">
+                       name="ingresos_conyugue" placeholder="Ingresos anuales">
             </div>
     `;
 };
