@@ -341,6 +341,7 @@ strong {
   opacity: 0;
 }
 .form__section .form__section__container #form__user__info #fieldset__spouse #form__group__inputs__spouse {
+  flex-wrap: wrap;
   opacity: 0;
   transition: var(--transition-medium);
 }
